@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.rd.mcard"
+    android:versionCode="1"
+    android:versionName="0.4.1"
+
+    >
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/CustomActionBarTheme" >
+        <service android:name=".BackgroundService"
+            android:exported="false"/>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+
+
+                 </activity>
+                    <activity android:name=".Sales"
+                     android:label="@string/sales"
+                     android:parentActivityName=".MainActivity">
+
+                    <meta-data
+                        android:name="android.support.PARENT_ACTIVITY"
+                        android:value="com.example.rd.mcard.MainActivity"/>
+
+                   </activity>
+        <activity android:name=".ShopDetail"
+            android:label="Shop detail"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:parentActivityName=".Sales">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.rd.mcard.Sales"
+                />
+        </activity>
+        <activity android:name=".LoginActivity"
+                  android:label="Login"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            </activity>
+        <activity android:name=".Settings"
+            android:label="Settings"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.rd.mcard.MainActivity"
+                />
+         </activity>
+        <activity android:name=".Help"
+            android:label="Help"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.rd.mcard.MainActivity"
+                />
+        </activity>
+
+
+    </application>
+
+</manifest>

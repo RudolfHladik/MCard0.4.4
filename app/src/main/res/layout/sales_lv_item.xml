@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+    <ImageView
+        android:id="@+id/imgIconSales"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#ffb5b5b5"
+        />
+    <TextView
+        android:id="@+id/txtTitleSales"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+
+    </LinearLayout>
+ </LinearLayout>
