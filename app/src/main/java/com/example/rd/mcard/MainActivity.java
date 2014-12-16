@@ -97,20 +97,20 @@ public class MainActivity extends Activity {
 
 
         Toast.makeText(getApplicationContext(),extras,Toast.LENGTH_LONG).show();
-//        if (extras.equals("exists")){
-//
-//
-//
-//
-//
-//           CRUDer localAdapter = new CRUDer(getApplicationContext());
-//           user = localAdapter.getUserfromDB();
-//
-//
-//        }
+        if (extras.equals("exists")){
+
+
+
+
+
+           CRUDer localAdapter = new CRUDer(getApplicationContext());
+           user = localAdapter.getUserfromDB();
+
+
+        }
 
         TextView textView = (TextView) findViewById(R.id.idTV);
-//        textView.setText(user.getUserID());
+        textView.setText(user.getUserID());
 
 
         /// end drawer toggle

@@ -3,10 +3,12 @@ package com.example.rd.mcard;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -19,23 +21,30 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.RequestFuture;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * Created by RD on 3.9.2014.
  */
 public class LoginActivity extends FragmentActivity  {
 
-    String url;
+    final String url = "http://rudolfhladik.com/new_user.php";
     Context context;
-    String userId,s = "c";
-    User u = new User();
-    int i = 1;
+    private static final long REQUEST_TIMEOUT = 30;
+    String userID = "nic neprislo";
 
 
 
@@ -46,6 +55,8 @@ public class LoginActivity extends FragmentActivity  {
         setContentView(R.layout.activity_login);
 
         context = getApplicationContext();
+
+
 
 
         try{
@@ -81,106 +92,69 @@ public class LoginActivity extends FragmentActivity  {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                registerNewUser();
-                Intent service = new Intent(getApplicationContext(), BackgroundService.class);
-                service.putExtra("action", " newUser");
-                startService(service);
-//                try {
-
-
-
-//                }catch (NullPointerException n){
 //
-//                    Log.d("null pointer except..", n.toString());
-//                }
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                intent.putExtra("user", "exists");
-                startActivity(intent);
+        new Async().execute();
+
+
             }
         });
 //
     }
-    private void registerNewUser() {
+    private class Async extends AsyncTask<String, String, JSONObject> {
 
+        private ProgressDialog pDialog;
 
-        // VOLLEY part //
-
-        RequestQueue queue = Volley.newRequestQueue(context);
-
-
-//        TODO url = "http://terrell.wz.cz/new_user.php";
-
-
-        String url = "http://terrell.wz.cz/new_user.php";
-        StringRequest postRequest = new StringRequest(Request.Method.POST, url,
-                new Response.Listener<String>()
-                {
-                    @Override
-                    public void onResponse(String response) {
-
-                        userId = response;
-                        if (!userId.equals(null)) {
-                            User user = new User(userId);
-                            CRUDer adapter = new CRUDer(getApplicationContext());
-
-                            long id = adapter.saveUserToDB(user);
-
-                            }
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(LoginActivity.this);
+            pDialog.setMessage("Registring new user");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
 
 
 
+        }
+
+        @Override
+        protected JSONObject doInBackground(String... strings) {
+
+            JSONParser jsonParser = new JSONParser();
+            JSONObject jsonObject = jsonParser.getJSONFromUrl(url);
 
 
-                        // response
-                        Log.d("Response", response);
-                        Log.d("Response user", userId);
+            return jsonObject;
+        }
+
+        @Override
+        protected void onPostExecute(JSONObject jsonObject) {
+            super.onPostExecute(jsonObject);
+            pDialog.dismiss();
+
+            try {
+                userID = jsonObject.getString("userID");
+                User user = new User(userID);
+                CRUDer adapter = new CRUDer(LoginActivity.this);
+
+                long id = adapter.saveUserToDB(user);
+
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.putExtra("user", "exists");
+                startActivity(intent);
 
 
-                    }
-                },
-                new Response.ErrorListener()
-                {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
 
+            }catch (JSONException e){
 
-                        // error
-                        Log.d("Error.Response", String.valueOf(error));
-                    }
-                }
-        ) {
-            @Override
-            protected Map<String, String> getParams()
-            {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("action", "regUser");
-
-
-                return params;
             }
-        };
-        queue.add(postRequest);
 
-
-
-//        SQLiteDatabase db = new SQLiteDatabase();
-//        String sqlInsertUser = ""
-//        db.execSQL();
-
-
+        }
     }
+
     private static boolean doesDatabaseExist(ContextWrapper context, String dbName) {
         File dbFile = context.getDatabasePath(dbName);
         return dbFile.exists();
     }
-
-
-
-    public void showNoticeDialog() {
-        // Create an instance of the dialog fragment and show it
-        DialogFragment dialog = new AreYouSureDialogFragment();
-        dialog.show(getFragmentManager(), "AreYouSureDialogFragment");
-    }
-
 
 }
