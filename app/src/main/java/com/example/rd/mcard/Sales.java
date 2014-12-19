@@ -8,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.melnykov.fab.FloatingActionButton;
+
 /**
  * Created by RD on 4.8.2014.
  */
@@ -26,6 +28,10 @@ public class Sales extends Activity {
         favShopItems = null;
 
         shopItems = new ShopItem[]{
+                new ShopItem(R.drawable.ca, getString(R.string.ca)),
+                new ShopItem(R.drawable.desigual_logo,getString(R.string.desigual)),
+                new ShopItem(R.drawable.soliver_logooo,getString(R.string.soliver)),
+                new ShopItem(R.drawable.zara,getString(R.string.zara)),
                 new ShopItem(R.drawable.ca, getString(R.string.ca)),
                 new ShopItem(R.drawable.desigual_logo,getString(R.string.desigual)),
                 new ShopItem(R.drawable.soliver_logooo,getString(R.string.soliver)),
@@ -52,6 +58,9 @@ public class Sales extends Activity {
 
         ShopItemAdapter shopItemAdapter = new ShopItemAdapter(this, R.layout.sales_lv_item, shopItems);
         ListView salesListView = (ListView) findViewById(R.id.shop_list);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.attachToListView(salesListView);
+        fab.show(false);
         salesListView.setAdapter(shopItemAdapter);
 
         salesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

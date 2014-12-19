@@ -30,6 +30,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -93,8 +94,11 @@ public class LoginActivity extends FragmentActivity  {
             @Override
             public void onClick(View view) {
 //
-        new Async().execute();
-
+        if (isOnline()) {
+            new Async().execute();
+        }else{
+            Toast.makeText(getApplicationContext(),"there is no internet connection.",Toast.LENGTH_SHORT).show();
+        }
 
             }
         });
@@ -140,7 +144,6 @@ public class LoginActivity extends FragmentActivity  {
                 long id = adapter.saveUserToDB(user);
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                intent.putExtra("user", "exists");
                 startActivity(intent);
 
 
@@ -155,6 +158,20 @@ public class LoginActivity extends FragmentActivity  {
     private static boolean doesDatabaseExist(ContextWrapper context, String dbName) {
         File dbFile = context.getDatabasePath(dbName);
         return dbFile.exists();
+    }
+    public boolean isOnline() {
+
+        Runtime runtime = Runtime.getRuntime();
+        try {
+
+            Process ipProcess = runtime.exec("/system/bin/ping -c 1 8.8.8.8");
+            int     exitValue = ipProcess.waitFor();
+            return (exitValue == 0);
+
+        } catch (IOException e)          { e.printStackTrace(); }
+        catch (InterruptedException e) { e.printStackTrace(); }
+
+        return false;
     }
 
 }

@@ -90,24 +90,11 @@ public class MainActivity extends Activity {
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
 
-        Intent intent = getIntent();
-        String extras = intent.getStringExtra("user");
+
         User user = new User();
+        CRUDer localAdapter = new CRUDer(getApplicationContext());
+        user = localAdapter.getUserfromDB();
 
-
-
-        Toast.makeText(getApplicationContext(),extras,Toast.LENGTH_LONG).show();
-        if (extras.equals("exists")){
-
-
-
-
-
-           CRUDer localAdapter = new CRUDer(getApplicationContext());
-           user = localAdapter.getUserfromDB();
-
-
-        }
 
         TextView textView = (TextView) findViewById(R.id.idTV);
         textView.setText(user.getUserID());

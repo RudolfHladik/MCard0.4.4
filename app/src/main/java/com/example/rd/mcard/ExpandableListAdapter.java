@@ -91,10 +91,16 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         int data = 0;
 
         if (convertView == null) {
-            LayoutInflater infalInflater = (LayoutInflater) context
+            LayoutInflater layoutInflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = infalInflater.inflate(R.layout.drawer_lv_item,
-                    null);
+            // setting different layout for rows
+            if (i>2){
+
+                convertView = layoutInflater.inflate(R.layout.drawer_lv_menu_item,
+                        null);
+            }else {
+                convertView = layoutInflater.inflate(R.layout.drawer_lv_item, null);
+            }
         }
         TextView item = (TextView) convertView.findViewById(R.id.txtTitle);
         ImageView img = (ImageView) convertView.findViewById(R.id.imgIcon);
@@ -120,34 +126,34 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                 break;
             case 3:
                     data = R.drawable.ic_action_settings;
-                    txtSize = 20f;
-                    txtColor = "#b5b5b5";
-                    imgSize = 40*dpiMultiplier;
-                    imgMargin = 25*dpiMultiplier;
-                    imgMarginRightMenu = 20*dpiMultiplier;
+//                    txtSize = 20f;
+//                    txtColor = "#b5b5b5";
+//                    imgSize = 40*dpiMultiplier;
+//                    imgMargin = 25*dpiMultiplier;
+//                    imgMarginRightMenu = 20*dpiMultiplier;
 
 
 
 
                 break;
             case 4: data = R.drawable.ic_action_help;
-                    txtSize = 20f;
-                    txtColor = "#b5b5b5";
-                    imgSize = 40*dpiMultiplier;
-                    imgMargin = 25*dpiMultiplier;
-                    imgMarginRightMenu = 20*dpiMultiplier;
+//                    txtSize = 20f;
+//                    txtColor = "#b5b5b5";
+//                    imgSize = 40*dpiMultiplier;
+//                    imgMargin = 25*dpiMultiplier;
+//                    imgMarginRightMenu = 20*dpiMultiplier;
         }
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(imgSize,imgSize);
-        layoutParams.setMargins(imgMargin, 0, imgMarginRightMenu, 0);
+//        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(imgSize,imgSize);
+//        layoutParams.setMargins(imgMargin, 0, imgMarginRightMenu, 0);
         img.setImageResource(data);
-        img.setLayoutParams(layoutParams);
-
-        item.setTypeface(null, Typeface.BOLD);
+//        img.setLayoutParams(layoutParams);
+//
+//        item.setTypeface(null, Typeface.BOLD);
 
 
         item.setText(laptopName);
-        item.setTextSize(TypedValue.COMPLEX_UNIT_DIP,txtSize);
-        item.setTextColor(Color.parseColor(txtColor));
+//        item.setTextSize(TypedValue.COMPLEX_UNIT_DIP,txtSize);
+//        item.setTextColor(Color.parseColor(txtColor));
         return convertView;
     }
 
