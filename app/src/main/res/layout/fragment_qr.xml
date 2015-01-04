@@ -16,7 +16,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="24dp"
-        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
         android:textSize="20sp"
         android:text="Skillful"
         android:textColor="#df000000"
@@ -168,7 +168,7 @@
         android:layout_height="24dp"
         android:textSize="20sp"
         android:text="Masterful"
-        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
         android:textColor="#df000000"
 
 
@@ -181,7 +181,7 @@
         >
 
         <RelativeLayout
-            android:id="@+id/section1_chliv1"
+            android:id="@+id/section2_chliv1"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -199,7 +199,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/section1_chliv1"
+            android:id="@+id/section2_chliv2"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -216,7 +216,7 @@
 
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/section1_chliv1"
+            android:id="@+id/section2_chliv3"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -233,7 +233,7 @@
 
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/section1_chliv1"
+            android:id="@+id/section2_chliv4"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -260,7 +260,7 @@
         android:background="@color/material_blue_500"
         >
         <RelativeLayout
-            android:id="@+id/section1_chliv1"
+            android:id="@+id/section2_chliv5"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -277,7 +277,7 @@
 
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/section1_chliv1"
+            android:id="@+id/section2_chliv6"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -294,7 +294,7 @@
 
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/section1_chliv1"
+            android:id="@+id/section2_chliv"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -319,7 +319,7 @@
         android:layout_height="24dp"
         android:textSize="20sp"
         android:text="Heroic"
-        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
         android:textColor="#df000000"
 
 
@@ -332,7 +332,7 @@
         >
 
         <RelativeLayout
-            android:id="@+id/section1_chliv1"
+            android:id="@+id/section3_chliv1"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -350,7 +350,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/section1_chliv1"
+            android:id="@+id/section3_chliv2"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -367,7 +367,7 @@
 
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/section1_chliv1"
+            android:id="@+id/section3_chliv3"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -384,7 +384,7 @@
 
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/section1_chliv1"
+            android:id="@+id/section3_chliv4"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -411,7 +411,7 @@
         android:background="@color/material_blue_500"
         >
         <RelativeLayout
-            android:id="@+id/section1_chliv1"
+            android:id="@+id/section3_chliv5"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -428,7 +428,7 @@
 
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/section1_chliv1"
+            android:id="@+id/section3_chliv6"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -445,7 +445,7 @@
 
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/section1_chliv1"
+            android:id="@+id/section3_chliv7"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
