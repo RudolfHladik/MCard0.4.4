@@ -5,6 +5,7 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/txtUtilCount"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:text="Discipline points left: 7"
@@ -193,12 +194,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
             <ImageView
-
+                android:id="@+id/utilImg7"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_alignParentEnd="false"
                 android:layout_centerInParent="true" />
             <ImageButton
+                android:id="@+id/utilBtn7"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_centerInParent="true" />
@@ -211,12 +213,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
             <ImageView
-
+                android:id="@+id/utilImg8"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_alignParentEnd="false"
                 android:layout_centerInParent="true" />
             <ImageButton
+                android:id="@+id/utilBtn8"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_centerInParent="true" />
@@ -228,12 +231,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
             <ImageView
-
+                android:id="@+id/utilImg9"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_alignParentEnd="false"
                 android:layout_centerInParent="true" />
             <ImageButton
+                android:id="@+id/utilBtn9"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_centerInParent="true" />
@@ -245,12 +249,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
             <ImageView
-
+                android:id="@+id/utilImg10"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_alignParentEnd="false"
                 android:layout_centerInParent="true" />
             <ImageButton
+                android:id="@+id/utilBtn10"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_centerInParent="true" />
@@ -272,12 +277,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
             <ImageView
-
+                android:id="@+id/utilImg11"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_alignParentEnd="false"
                 android:layout_centerInParent="true" />
             <ImageButton
+                android:id="@+id/utilBtn11"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_centerInParent="true" />
@@ -289,12 +295,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
             <ImageView
-
+                android:id="@+id/utilImg12"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_alignParentEnd="false"
                 android:layout_centerInParent="true" />
             <ImageButton
+                android:id="@+id/utilBtn12"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_centerInParent="true" />
@@ -306,12 +313,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
             <ImageView
-
+                android:id="@+id/utilImg13"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_alignParentEnd="false"
                 android:layout_centerInParent="true" />
             <ImageButton
+                android:id="@+id/utilBtn13"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_centerInParent="true" />
@@ -344,12 +352,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
             <ImageView
-
+                android:id="@+id/utilImg14"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_alignParentEnd="false"
                 android:layout_centerInParent="true" />
             <ImageButton
+                android:id="@+id/utilBtn14"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_centerInParent="true" />
@@ -362,12 +371,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
             <ImageView
-
+                android:id="@+id/utilImg15"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_alignParentEnd="false"
                 android:layout_centerInParent="true" />
             <ImageButton
+                android:id="@+id/utilBtn15"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_centerInParent="true" />
@@ -379,12 +389,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
             <ImageView
-
+                android:id="@+id/utilImg16"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_alignParentEnd="false"
                 android:layout_centerInParent="true" />
             <ImageButton
+                android:id="@+id/utilBtn16"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_centerInParent="true" />
@@ -396,12 +407,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
             <ImageView
-
+                android:id="@+id/utilImg17"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_alignParentEnd="false"
                 android:layout_centerInParent="true" />
             <ImageButton
+                android:id="@+id/utilBtn17"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_centerInParent="true" />
@@ -423,12 +435,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
             <ImageView
-
+                android:id="@+id/utilImg18"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_alignParentEnd="false"
                 android:layout_centerInParent="true" />
             <ImageButton
+                android:id="@+id/utilBtn18"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_centerInParent="true" />
@@ -440,12 +453,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
             <ImageView
-
+                android:id="@+id/utilImg19"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_alignParentEnd="false"
                 android:layout_centerInParent="true" />
             <ImageButton
+                android:id="@+id/utilBtn19"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_centerInParent="true" />
@@ -457,12 +471,13 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
             <ImageView
-
+                android:id="@+id/utilImg20"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_alignParentEnd="false"
                 android:layout_centerInParent="true" />
             <ImageButton
+                android:id="@+id/utilBtn20"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_centerInParent="true" />
