@@ -112,7 +112,7 @@ public class LoginActivity extends FragmentActivity  {
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog = new ProgressDialog(LoginActivity.this);
-            pDialog.setMessage("Registring new user");
+            pDialog.setMessage("Registering new user");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();

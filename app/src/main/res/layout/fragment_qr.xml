@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:text="Discipline points left: 7"
-        android:textSize="34sp"
+        android:textSize="32sp"
         android:textColor="#8a000000"
 
 
