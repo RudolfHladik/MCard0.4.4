@@ -7,34 +7,45 @@
             android:id="@+id/card_view"
             android:layout_gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            card_view:cardCornerRadius="4dp">
+            android:layout_height="200dp"
+            card_view:cardCornerRadius="4dp"
+            android:layout_margin="16dp"
+          >
 
           <LinearLayout
               android:orientation="horizontal"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+
+              >
               <ImageView
                   android:id="@+id/iv_char_img"
-                  android:layout_width="100dp"
+                  android:layout_width="150dp"
                   android:layout_height="200dp"
+                  android:src="@drawable/ic_avatar"
 
                   />
               <LinearLayout
                   android:orientation="vertical"
-                  android:layout_width="250dp"
-                  android:layout_height="200dp">
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
                   <TextView
                       android:id="@+id/tv_char_name"
                       android:layout_width="match_parent"
                       android:layout_height="50dp"
                       android:text="Character name"
+                      android:textColor="@color/black"
+                      android:paddingLeft="6dp"
+                      android:gravity="center_vertical"
                       />
                   <TextView
+                      android:textColor="@color/black"
                       android:id="@+id/tv_char_ac"
                       android:layout_width="match_parent"
                       android:layout_height="50dp"
                       android:text="Advanced class"
+                      android:paddingLeft="6dp"
+                      android:gravity="center_vertical"
 
                       />
                   <LinearLayout
@@ -49,6 +60,10 @@
                       android:layout_weight="1"
                       android:layout_height="50dp"
                       android:text="tank/dps/heal"
+                      android:textColor="@color/black"
+                      android:paddingLeft="6dp"
+                      android:gravity="center_vertical"
+
                       />
                   <TextView
                       android:id="@+id/tv_char_env"
@@ -56,6 +71,10 @@
                       android:layout_weight="1"
                       android:layout_height="50dp"
                       android:text="PVE/PVP"
+                      android:textColor="@color/black"
+                      android:paddingLeft="6dp"
+                      android:gravity="center_vertical"
+
                       />
                   </LinearLayout>
                   <View
@@ -66,8 +85,8 @@
 
                   <LinearLayout
                       android:orientation="horizontal"
-                      android:layout_width="250dp"
-                      android:layout_height="50dp">
+                      android:layout_width="match_parent"
+                      android:layout_height="48dp">
                       <TextView
                           android:id="@+id/btn_delete_char"
                           android:layout_width="0dp"
@@ -75,8 +94,11 @@
                           android:layout_height="match_parent"
                           android:text="delete"
                           android:gravity="center"
+                          android:textColor="@color/black"
+
 
                           />
+
                       <TextView
                           android:id="@+id/btn_edit_char"
                           android:layout_width="0dp"
@@ -84,15 +106,21 @@
                           android:layout_height="match_parent"
                           android:text="edit"
                           android:gravity="center"
+                          android:textColor="@color/black"
+
+
 
                           />
+
                       <TextView
                           android:id="@+id/btn_disciplines"
                           android:layout_width="0dp"
-                          android:layout_weight="1"
+                          android:layout_weight="2"
                           android:layout_height="match_parent"
                           android:text="disciplines"
                           android:gravity="center"
+                          android:textColor="@color/accent_light"
+
 
                           />
                       </LinearLayout>

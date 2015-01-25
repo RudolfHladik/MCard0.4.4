@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="start"
-        android:background="#f08a24"
+        android:background="@color/primary_light"
 
         >
         <RelativeLayout

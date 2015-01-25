@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:id="@+id/activity_char_frame"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="avatar"
+        android:paddingLeft="6dp"
+        />
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="140dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center"
+        android:background="@color/material_blue_grey_800"
+        android:src="@drawable/ic_avatar_add"
+
+        />
+    <EditText
+        android:id="@+id/et_char_name"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/char_name"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:maxLines="1"
+        android:maxLength="20"
+        />
+    <Spinner
+        android:layout_marginTop="10dp"
+        android:id="@+id/spinner_race"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        />
+    <Spinner
+        android:layout_marginTop="10dp"
+        android:id="@+id/spinner_ac"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        />
+    <Spinner
+        android:layout_marginTop="10dp"
+        android:id="@+id/spinner_role"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        />
+    <Spinner
+        android:layout_marginTop="10dp"
+        android:id="@+id/spinner_spec"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        />
+    <Spinner
+        android:layout_marginTop="10dp"
+        android:id="@+id/spinner_fraction"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        />
+    <Spinner
+        android:layout_marginTop="10dp"
+        android:id="@+id/spinner_gender"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        />
+
+
+<LinearLayout
+    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    >
+    <TextView
+        android:id="@+id/tv_lvl"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="Level: 1"
+        android:paddingLeft="6dp"
+
+        />
+    <SeekBar
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvlBar"
+        android:max="59"
+        />
+    <TextView
+
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+
+        />
+</LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/sith_emblem"
+        android:layout_margin="60dp"
+        />
+
+</LinearLayout>
+
+
+</ScrollView>
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/fab_set_disciplines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="24dp"
+        android:src="@drawable/ic_disciplines"
+        fab:fab_colorNormal="@color/white"
+        fab:fab_colorPressed="@color/accent_light"
+        fab:fab_colorRipple="#55313131" />
+</FrameLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material colors -->
+
+    <item name="primary" type="color">#6D4C41</item>
+    <item name="primary_dark" type="color">#4E342E</item>
+    <item name="primary_light" type="color">#BCAAA4</item>
+    <item name="accent" type="color">#C51162</item>
+    <item name="accent_light" type="color">#F50057</item>
+
+    <item name="black" type="color">#ff000000</item>
+    <item name="white" type="color">#ffffffff</item>
+
+
+
+
+
+
+</resources>

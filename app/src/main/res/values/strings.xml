@@ -2,7 +2,7 @@
 <resources>
 
 
-    <string name="app_name">MCard</string>
+    <string name="app_name">SWTOR discipline setup</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="action_help">Help</string>
@@ -30,6 +30,20 @@
 
     <!--                 Playable character races/species                -->
 
+    <string-array name="races">
+        <item>@string/torguta</item>
+        <item>@string/human</item>
+        <item>@string/twillek</item>
+        <item>@string/zabrak</item>
+        <item>@string/sith</item>
+        <item>@string/miraluka</item>
+        <item>@string/chiss</item>
+        <item>@string/cathar</item>
+        <item>@string/cyborg</item>
+        <item>@string/mirialan</item>
+        <item>@string/rattataki</item>
+    </string-array>
+
     <string name="human">Human</string>
     <string name="twillek">Twillek</string>
     <string name="zabrak">Zabrak</string>
@@ -42,6 +56,95 @@
     <string name="rattataki">Rattataki</string>
     <string name="torguta">Torguta</string>
 
+    <!--                 Character creation fragment                -->
+
+    <string-array name="rep_ac">
+        <item>@string/ac_guard</item>
+        <item>@string/ac_sent</item>
+        <item>@string/ac_sage</item>
+        <item>@string/ac_shadow</item>
+        <item>@string/ac_mando</item>
+        <item>@string/ac_vang</item>
+        <item>@string/ac_scoundrel</item>
+        <item>@string/ac_slinger</item>
+     </string-array>
+
+    <string name="char_name">Character name</string>
+    <string name="ac">Advanced class</string>
+    <string name="ac_guard">Guardian</string>
+    <string name="ac_sent">Sentinel</string>
+    <string name="ac_sage">Sage</string>
+    <string name="ac_shadow">Shadow</string>
+    <string name="ac_mando">Commando</string>
+    <string name="ac_vang">Vanguard</string>
+    <string name="ac_scoundrel">Scoundrel</string>
+    <string name="ac_slinger">Gunslinger</string>
+
+    <string-array name="imp_ac">
+        <item>@string/ac_jugger</item>
+        <item>@string/ac_mara</item>
+        <item>@string/ac_sorc</item>
+        <item>@string/ac_sin</item>
+        <item>@string/ac_merc</item>
+        <item>@string/ac_pt</item>
+        <item>@string/ac_op</item>
+        <item>@string/ac_sniper</item>
+    </string-array>
+
+    <string name="ac_jugger">Juggernaut</string>
+    <string name="ac_mara">Marauder</string>
+    <string name="ac_sorc">Sorcerer</string>
+    <string name="ac_sin">Assassin</string>
+    <string name="ac_merc">Mercenery</string>
+    <string name="ac_pt">Powertech</string>
+    <string name="ac_op">Operative</string>
+    <string name="ac_sniper">Sniper</string>
+
+    <string-array name="roles">
+        <item>@string/role_tank</item>
+        <item>@string/role_dps</item>
+        <item>@string/role_heal</item>
+
+    </string-array>
+
+    <string-array name="specs">
+        <item>@string/pvp</item>
+        <item>@string/pve</item>
+    </string-array>
+
+    <string name="specs">Specs</string>
+    <string name="pve">PvE</string>
+    <string name="pvp">PvP</string>
+
+
+    <string name="role">Role</string>
+    <string name="role_tank">Tank</string>
+    <string name="role_dps">DPS</string>
+    <string name="role_heal">Healer</string>
+
+    <string-array name="gender">
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+
+    </string-array>
+
+    <string name="gender">Gender</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+
+
+    <string name="set_disc">set Disciplines</string>
+
+    <string-array name="fraction">
+        <item>@string/fraction_rep</item>
+        <item>@string/fraction_imp</item>
+    </string-array>
+
+    <string name="fraction">Fraction</string>
+    <string name="fraction_rep">Republic</string>
+    <string name="fraction_imp">Empire</string>
+
+    <string name="spec">Specialization</string>
 
 
 

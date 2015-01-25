@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- the theme applied to the application or activity -->
-    <style name="CustomActionBarTheme"
+    <style name="AppTheme"
         parent="@android:style/Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
-        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
-        <item name="android:actionBarTabBarStyle">@style/MyActionBarTabBarStyle</item>
+
     </style>
 
     <!-- ActionBar styles -->
     <style name="MyActionBar"
         parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@drawable/actionbar_background</item>
+        <item name="android:background">@color/primary</item>
     </style>
-    <style name="MyActionBarTabStyle"
-        parent="@style/android:Widget.Holo.Light.ActionBar.TabView">
 
-        <item name="android:background">@drawable/actionbar_tab_indicator</item>
-    </style>
-    <style name="MyActionBarTabBarStyle"
-        parent="@style/android:Widget.Holo.Light.ActionBar.TabView">
-        <item name="android:background">#ff1830ff</item>
-
-    </style>
 </resources>

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:fab="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="46dp"
+    >
+    <TextView
+        android:id="@+id/txtUtilCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="7 disciplines point left"
+        android:textSize="32sp"
+        android:textColor="#8a000000"
+
+
+        android:gravity="center" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:paddingLeft="16dp"
+        android:textSize="20sp"
+        android:text="Skillful"
+        android:textColor="#df000000"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/material_blue_500"
+        >
+
+        <RelativeLayout
+            android:id="@+id/section1_chliv1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg0"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn0"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/section1_chliv2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg1"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/section1_chliv3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg2"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/section1_chliv4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg3"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/material_blue_500"
+        >
+        <RelativeLayout
+            android:id="@+id/section1_chliv5"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg4"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn4"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/section1_chliv6"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg5"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn5"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/section1_chliv7"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg6"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn6"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:textSize="20sp"
+        android:text="Masterful"
+        android:paddingLeft="16dp"
+        android:textColor="#df000000"
+
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/material_blue_500"
+        >
+
+        <RelativeLayout
+            android:id="@+id/section2_chliv1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg7"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn7"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/section2_chliv2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg8"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn8"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/section2_chliv3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg9"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn9"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/section2_chliv4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg10"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn10"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/material_blue_500"
+        >
+        <RelativeLayout
+            android:id="@+id/section2_chliv5"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg11"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn11"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/section2_chliv6"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg12"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn12"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/section2_chliv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg13"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn13"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:textSize="20sp"
+        android:text="Heroic"
+        android:paddingLeft="16dp"
+        android:textColor="#df000000"
+
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/material_blue_500"
+        >
+
+        <RelativeLayout
+            android:id="@+id/section3_chliv1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg14"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn14"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/section3_chliv2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg15"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn15"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/section3_chliv3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg16"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn16"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/section3_chliv4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg17"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn17"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/material_blue_500"
+        >
+        <RelativeLayout
+            android:id="@+id/section3_chliv5"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg18"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn18"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/section3_chliv6"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg19"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn19"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/section3_chliv7"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/utilImg20"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+            <ImageButton
+                android:id="@+id/utilBtn20"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+        <com.melnykov.fab.FloatingActionButton
+            android:id="@+id/fab_save_disciplines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_action_settings"
+            fab:fab_colorNormal="#ff1b5723"
+            fab:fab_colorPressed="#ff488864"
+            fab:fab_colorRipple="#55313131" />
+
+
+    </FrameLayout>
+
