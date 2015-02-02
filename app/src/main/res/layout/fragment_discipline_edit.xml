@@ -501,16 +501,7 @@
 </LinearLayout>
 
 
-        <com.melnykov.fab.FloatingActionButton
-            android:id="@+id/fab_save_disciplines"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:layout_margin="20dp"
-            android:src="@drawable/ic_action_settings"
-            fab:fab_colorNormal="#ff1b5723"
-            fab:fab_colorPressed="#ff488864"
-            fab:fab_colorRipple="#55313131" />
+
 
 
     </FrameLayout>

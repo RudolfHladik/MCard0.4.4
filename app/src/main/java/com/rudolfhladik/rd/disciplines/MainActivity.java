@@ -46,6 +46,12 @@ public class MainActivity extends Activity {
     public SQLiteDatabase db;
     String s = "";
 
+    //TODO Guides for every spec and class
+
+    //TODO enable online registration
+    //TODO enable online sync for registred users
+
+
 
 
 
@@ -58,7 +64,11 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content_frame, new CharViewerFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.content_frame, new CharViewerFragment())
+                        .addToBackStack("queue")
+                        .commit();
+        mDrawerTitle = "Republic characters";
+
         //// drawer Toggle
         mTitle = mDrawerTitle = getTitle();
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -113,9 +123,9 @@ public class MainActivity extends Activity {
         mListDataHeader = new ArrayList<String>();
         mListDataChild = new HashMap<String, List<String>>();
 
-        mListDataHeader.add("Characters");
-        mListDataHeader.add("Disciplines");
-        mListDataHeader.add("History");
+        mListDataHeader.add("My Chars");
+        mListDataHeader.add("Browse Utilities");
+        mListDataHeader.add("Guides");
         mListDataHeader.add("Settings");
         mListDataHeader.add("Help");
 
@@ -207,22 +217,36 @@ public class MainActivity extends Activity {
         switch (position){
 
             case 0:
-                fragmentManager.beginTransaction().replace(R.id.content_frame, new CharViewerFragment()).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new CharViewerFragment())
+                        .addToBackStack("queue")
+                        .commit();
+                mTitle = "Republic characters";
+
                 mDrawerLayout.closeDrawers();
 //                intent = new Intent(this, Sales.class);
 //                startActivity(intent);
                 break;
 
             case 1:
-
-                fragmentManager.beginTransaction().replace(R.id.content_frame, new DisciplineEditFragment()).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new RepUtilityClassSelectionFragment())
+                        .addToBackStack("queue")
+                        .commit();
+                mTitle = "Utility viewer";
                 mDrawerLayout.closeDrawers();
+
+//                fragmentManager.beginTransaction().replace(R.id.content_frame, new UtilityViewerFragment())
+//                        .addToBackStack("queue")
+//                        .commit();
+//                mDrawerLayout.closeDrawers();
 
 
                 break;
             case 2:
 
-                fragmentManager.beginTransaction().replace(R.id.content_frame, new CharViewerFragment()).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new GuidesFragment())
+                        .addToBackStack("queue")
+                        .commit();
+                mTitle = "Guides";
                 mDrawerLayout.closeDrawers();
 
 
@@ -243,7 +267,19 @@ public class MainActivity extends Activity {
      }
 
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        mTitle = "Republic characters";
+        getActionBar().setTitle(mTitle);
 
+
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.content_frame, new CharViewerFragment())
+                .addToBackStack("queue")
+                .commit();
+
+    }
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {

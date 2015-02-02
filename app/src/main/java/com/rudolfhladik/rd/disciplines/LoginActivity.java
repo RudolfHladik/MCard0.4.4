@@ -43,11 +43,12 @@ public class LoginActivity extends FragmentActivity  {
 
         try{
 
-            if (doesDatabaseExist((ContextWrapper) getApplicationContext(),"mcard.db")){
+            if (doesDatabaseExist((ContextWrapper) getApplicationContext(),"swtor.db")){
                 Toast.makeText(context, "databaze existuje", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 intent.putExtra("user", "exists");
                 startActivity(intent);
+                finish();
 
 
             }else {
@@ -126,6 +127,7 @@ public class LoginActivity extends FragmentActivity  {
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                finish();
 
 
 

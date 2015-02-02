@@ -42,7 +42,7 @@
         android:hint="@string/char_name"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
-        android:maxLines="1"
+        android:singleLine="true"
         android:maxLength="20"
         />
     <Spinner
@@ -126,6 +126,7 @@
         />
 </LinearLayout>
     <ImageView
+        android:id="@+id/sith_emblem"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:src="@drawable/sith_emblem"

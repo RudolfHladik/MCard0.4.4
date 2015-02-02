@@ -5,10 +5,14 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcel;
 import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.graphics.Palette;
 import android.util.Log;
 import android.view.View;
@@ -27,6 +31,7 @@ import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 
 /**
@@ -43,6 +48,19 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
     Char newChar = new Char();
     boolean edit = false;
 
+    EditText etCharName;
+    Spinner spinner_race;
+    Spinner spinner_ac;
+    Spinner spinner_role;
+    Spinner spinner_spec;
+    Spinner spinner_fraction;
+    Spinner spinner_gender;
+    SeekBar lvlBar;
+    TextView lvlTv;
+    ImageView avatarIV;
+
+
+
 
 
 
@@ -51,7 +69,18 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_char_creation);
-        ImageView avatarIV = (ImageView) findViewById(R.id.iv_avatar);
+        avatarIV = (ImageView) findViewById(R.id.iv_avatar);
+
+        etCharName = (EditText) findViewById(R.id.et_char_name);
+        spinner_race = (Spinner) findViewById(R.id.spinner_race);
+        spinner_ac = (Spinner) findViewById(R.id.spinner_ac);
+        spinner_role = (Spinner) findViewById(R.id.spinner_role);
+        spinner_spec = (Spinner) findViewById(R.id.spinner_spec);
+        spinner_fraction = (Spinner) findViewById(R.id.spinner_fraction);
+        spinner_gender = (Spinner) findViewById(R.id.spinner_gender);
+
+        lvlBar = (SeekBar) findViewById(R.id.lvlBar);
+        lvlTv = (TextView) findViewById(R.id.tv_lvl);
 
         avatarIV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,16 +99,7 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
         });
 
 
-        EditText etCharName = (EditText) findViewById(R.id.et_char_name);
-        Spinner spinner_race = (Spinner) findViewById(R.id.spinner_race);
-        Spinner spinner_ac = (Spinner) findViewById(R.id.spinner_ac);
-        Spinner spinner_role = (Spinner) findViewById(R.id.spinner_role);
-        Spinner spinner_spec = (Spinner) findViewById(R.id.spinner_spec);
-        Spinner spinner_fraction = (Spinner) findViewById(R.id.spinner_fraction);
-        Spinner spinner_gender = (Spinner) findViewById(R.id.spinner_gender);
 
-        SeekBar lvlBar = (SeekBar) findViewById(R.id.lvlBar);
-        final TextView lvlTv = (TextView) findViewById(R.id.tv_lvl);
 
 
         lvlBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -133,14 +153,24 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
         spinner_gender.setAdapter(adapter_gender);
 
 
-        newChar.setCharName(etCharName.getText().toString());
-        newChar.setRace(spinner_race.getSelectedItemPosition());
-        newChar.setAdvClass(spinner_ac.getSelectedItemPosition() + 11); // for REP ACs, for IMPs its 21
-        newChar.setRole(spinner_role.getSelectedItemPosition());
-        newChar.setSpecialization(spinner_spec.getSelectedItemPosition());
-        newChar.setFraction(0); //0 for REP  1 for IMP
-        newChar.setGender(spinner_gender.getSelectedItemPosition());
-        newChar.setLvl(lvlBar.getProgress() +1);
+        Drawable avatarDrawable = avatarIV.getDrawable();
+
+        Bitmap avatarBmp = Bitmap.createBitmap(avatarDrawable.getIntrinsicWidth(), avatarDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(avatarBmp);
+        avatarDrawable.setBounds(0,0,canvas.getWidth(), canvas.getHeight());
+        avatarDrawable.draw(canvas);
+
+        newChar.setAvatar(avatarBmp);
+
+//        newChar.setCharName(etCharName.getText().toString());
+//        newChar.setRace(spinner_race.getSelectedItemPosition());
+//        newChar.setAdvClass(spinner_ac.getSelectedItemPosition() + 11); // for REP ACs, for IMPs its 21
+//        newChar.setRole(spinner_role.getSelectedItemPosition());
+//        newChar.setSpecialization(spinner_spec.getSelectedItemPosition());
+//        newChar.setFraction(0); //0 for REP  1 for IMP
+//        newChar.setGender(spinner_gender.getSelectedItemPosition());
+//        newChar.setLvl(lvlBar.getProgress() +1);
+
 
         TextView info = (TextView) findViewById(R.id.tv_info);
         info.setText("Char name: " + newChar.charName +
@@ -157,11 +187,29 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
         setDisciplines.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
+
+
                 if (edit){
 
                 }else {
+
+                    newChar.setCharName(etCharName.getText().toString());
+                    newChar.setRace(spinner_race.getSelectedItemPosition());
+                    newChar.setAdvClass(spinner_ac.getSelectedItemPosition()); // for REP ACs, for IMPs its 21
+                    newChar.setRole(spinner_role.getSelectedItemPosition());
+                    newChar.setSpecialization(spinner_spec.getSelectedItemPosition());
+                    newChar.setFraction(0); //0 for REP  1 for IMP
+                    newChar.setGender(spinner_gender.getSelectedItemPosition());
+                    newChar.setLvl(lvlBar.getProgress() +1);
+
+
                     Intent i = new Intent(getApplicationContext(), ActivityDisciplineEditor.class);
                     i.putExtra("Action_edit", edit);
+
+
                     i.putExtra("CharName", newChar.charName);
                     i.putExtra("Race", newChar.race);
                     i.putExtra("AC", newChar.advClass);
@@ -171,9 +219,10 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
                     i.putExtra("Gender", newChar.gender);
                     i.putExtra("Level", newChar.lvl);
                     i.putExtra("Disciplines", newChar.disciplines );
+                    i.putExtra("Avatar", newChar.avatar);
                     startActivity(i);
-
-
+//
+//
                 }
             }
         });

@@ -91,14 +91,29 @@ public class CharViewerFragment extends Fragment {
         dis[8] = true;
         dis[14] = true;
         dis[15] = true;
-        Char Terrel = new Char(9,"Terrel",60, 11,2,1,1,1);
-        Terrel.setDisciplines(dis);
+//        Char Terrel = new Char(9,"Terrel",60, 11,2,1,1,1);
+//        Terrel.setDisciplines(dis);
         List<Char> items = new ArrayList<Char>();
-        items.add(Terrel);
-        items.add(new Char(7,"Terril",60,14,1,2,1,0));
-        items.add(new Char(7,"Terrell",60,14,1,2,1,0));
-        items.add(new Char(7,"Fixr",60,14,1,2,1,0));
-        items.add(new Char(7,"Zeebone",60,14,1,2,1,0));
+        Char[] chars = null;
+        if (items.isEmpty()){
+            CRUDer cruDer = new CRUDer(view.getContext());
+            chars = cruDer.getCharFromDB(0);
+            if (chars!= null) {
+                int lenght = chars.length;
+                for (int i = 0; i<lenght; i++){
+                    items.add(chars[i]);
+                }
+            }
+            //check DB if(DB empty) show dialog No Chars
+//                            else load chars from DB
+        }else {
+            //
+        }
+//        items.add(Terrel);
+//        items.add(new Char(7,"Terril",60,14,1,2,1,0));
+//        items.add(new Char(7,"Terrell",60,14,1,2,1,0));
+//        items.add(new Char(7,"Fixr",60,14,1,2,1,0));
+//        items.add(new Char(7,"Zeebone",60,14,1,2,1,0));
 
 
 

@@ -1,7 +1,11 @@
 package com.rudolfhladik.rd.disciplines.adapters;
 
+import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +14,9 @@ import android.widget.TextView;
 
 import com.rudolfhladik.rd.disciplines.ActivityDisciplineEditor;
 import com.rudolfhladik.rd.disciplines.Char;
+import com.rudolfhladik.rd.disciplines.MainActivity;
 import com.rudolfhladik.rd.disciplines.R;
+import com.rudolfhladik.rd.disciplines.UtilityViewerFragment;
 
 import java.util.List;
 
@@ -32,6 +38,8 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
         protected TextView btnEdit;
         protected TextView btnDisciplines;
         public Intent intent = new Intent();
+        public Bundle bundle = new Bundle();
+
 
 
 
@@ -55,12 +63,31 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
                 public void onClick(View v) {
                     boolean[] dis = new boolean[21];
                     dis = intent.getBooleanArrayExtra("Disciplines");
-                   intent =  new Intent(v.getContext(), ActivityDisciplineEditor.class);
-                    intent.putExtra("Action_edit", true);
-                    intent.putExtra("Disciplines", dis);
+                    int rep = intent.getIntExtra("Fraction", 0);
+                    int advancedClass = intent.getIntExtra("AC", 0);
+                    bundle.putInt("Fraction", rep);
+                    bundle.putInt("AC", advancedClass);
+                    bundle.putBooleanArray("Disciplines", dis);
+                    try{
+                        final Activity activity = (Activity) v.getContext();
+                        UtilityViewerFragment utilityViewerFragment = new UtilityViewerFragment();
+                        utilityViewerFragment.setArguments(bundle);
+                        FragmentManager fragmentManager = activity.getFragmentManager();
+                        fragmentManager.beginTransaction().replace(R.id.content_frame,utilityViewerFragment).commit();
 
 
-                    v.getContext().startActivity(intent);
+                    } catch (ClassCastException e) {
+                        Log.d("", "Can't get the fragment manager with this");
+                    }
+
+
+
+//                   intent =  new Intent(v.getContext(), ActivityDisciplineEditor.class);
+//                    intent.putExtra("Action_edit", true);
+//                    intent.putExtra("Disciplines", dis);
+//
+//
+//                    v.getContext().startActivity(intent);
 
 
                 }

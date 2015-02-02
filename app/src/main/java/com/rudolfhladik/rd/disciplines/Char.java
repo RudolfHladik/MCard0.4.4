@@ -2,7 +2,13 @@ package com.rudolfhladik.rd.disciplines;
 
 
 
+import android.content.res.Resources;
+
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+
 import java.util.Arrays;
+import java.util.BitSet;
 
 /**
  * Created by RD on 14.1.2015.
@@ -10,6 +16,11 @@ import java.util.Arrays;
 public class Char {
     //race 1: human, 2: twillek, 3: zabrak, 4: sith, 5: mirluka, 6:chiss, 7:cathar 8:cyborg 9: mirialan 10: rattataki
     //     0: torguta
+
+   Bitmap bitmap;
+
+
+
     public static String human = "Human";
     public static String twillek = "Twilek";
     public static String zabrak = "Zabrak";
@@ -51,16 +62,18 @@ public class Char {
     public static String heal = "Healer";
 
 
-
+    protected int charid;
     protected int race;
     public String charName;
     protected int lvl;
     // REP Advanced classes: 11: guardian, 12: sentinel, 13: sage, 14: shadow, 15: commando, 16: vanguard, 17: scoundrel, 18: gunslinger
     // IMP Advanced classes: 21: juggernaut, 22: marauder, 13: sorcerer, 14: assassin, 15: mercenarz, 16: powertech, 17: operative, 18: sniper
     protected int advClass;
-    // roles: 1: tank, 2: dps, 3: healer
+    // roles: 0: tank, 1: dps, 2: healer
     protected int role;
-    // spec 1: pvp, 2: pve
+    // spec 0: pvp, 1: pve
+    protected int enviroment;
+    // spec 0 1 2
     protected int specialization;
     // side 1: REP, 2: IMP
     protected int fraction;
@@ -69,7 +82,9 @@ public class Char {
     // disciplines[skillful, masterful, heroic][points]
     protected boolean[] disciplines = new boolean[21];
 
-    public Char(int race, String charName, int lvl, int advClass, int role, int specialization, int fraction, int gender){
+    protected Bitmap avatar;
+
+    public Char(int race, String charName, int lvl, int advClass, int role, int specialization, int fraction, int gender, Bitmap avatar){
         super();
 
         this.race = race;
@@ -81,11 +96,12 @@ public class Char {
         this.fraction = fraction;
         this.gender = gender;
         Arrays.fill(disciplines, false);
+        this.avatar = avatar;
     }
 
     public  Char(){
         super();
-
+        this.charid = 0;
         this.race = 0;
         this.charName = "noname";
         this.lvl = 0;
@@ -95,6 +111,9 @@ public class Char {
         this.fraction = 0;
         this.gender = 0;
         Arrays.fill(disciplines, false);
+        this.avatar = bitmap;
+
+
 
     }
 
@@ -237,7 +256,8 @@ public class Char {
                 break;
             case 1: mSpec = "PvE";
                 break;
-            default: mSpec = "PvP";
+
+            default: mSpec = "PVP";
                 break;
 
         }
@@ -282,5 +302,42 @@ public class Char {
 
     public void setDisciplines(boolean[] disciplines) {
         this.disciplines = disciplines;
+    }
+
+    public BitSet getDis(){
+        BitSet dis = new BitSet(21);
+        for (int i = 0; i < 21; i++){
+
+            dis.set(i,disciplines[i]);
+
+        }
+
+
+    return dis;}
+
+    public void setDis(BitSet dis){
+
+        for (int i = 0; i< 21; i++) {
+            disciplines[i] = dis.get(i) ;
+        }
+    }
+
+    public void setEnviroment(int enviroment) {
+        this.enviroment = enviroment;
+    }
+
+    public Bitmap getAvatar() {
+
+        //TODO save avatar as URI!!
+//        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+//        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+//        String path = Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+//        Uri uri = Uri.parse(path);
+
+        return avatar;
+    }
+
+    public void setAvatar(Bitmap avatar) {
+        this.avatar = avatar;
     }
 }
