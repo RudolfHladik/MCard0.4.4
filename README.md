@@ -11,5 +11,3 @@ and than you will always find them in list of Cards on main screen.
 
 Please be patient, features will be coming Soon™
 
-App require several image resources which you can find in zip file, 
-just extract them in ..\SWTOR Utilities setup\app\src\main\res\
