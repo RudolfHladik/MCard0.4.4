@@ -3,6 +3,7 @@ package com.rudolfhladik.rd.disciplines;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -731,7 +732,8 @@ public class ActivityDisciplineEditor extends Activity {
 
                 // TODO pass URI of image instead of Bitmap, it more memore eficient
                 Bitmap av = i.getParcelableExtra("Avatar");
-                character.setAvatar(av);
+                character.avatarUri = Uri.parse(i.getStringExtra("AvatarURI"));
+
                 character.setCharName(i.getStringExtra("CharName"));
                 character.setRace(i.getIntExtra("Race", 0));
                 character.setAdvClass(i.getIntExtra("AC", 0));

@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/primary_dark"
     >
 
     <LinearLayout
@@ -45,7 +45,7 @@
         android:id="@+id/btn_guardian"
         android:layout_width="0dp"
         android:layout_weight="1.5"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:contentDescription="guardian"
         android:background="@drawable/guardian"
         />
@@ -53,7 +53,7 @@
         android:id="@+id/btn_sentinel"
         android:layout_width="0dp"
         android:layout_weight="1.5"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:contentDescription="sentinel"
         android:background="@drawable/sentinel"
 
@@ -76,7 +76,7 @@
             android:id="@+id/btn_sage"
             android:layout_width="0dp"
             android:layout_weight="1.5"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:contentDescription="sage"
             android:background="@drawable/sage"
 
@@ -85,7 +85,7 @@
             android:id="@+id/btn_shadow"
             android:layout_width="0dp"
             android:layout_weight="1.5"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:contentDescription="shadow"
             android:background="@drawable/shadow_ac"
 
@@ -109,7 +109,7 @@
         android:id="@+id/btn_commando"
         android:layout_width="0dp"
         android:layout_weight="1.5"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:contentDescription="commando"
         android:background="@drawable/commando"
 
@@ -118,7 +118,7 @@
         android:id="@+id/btn_vanguard"
         android:layout_width="0dp"
         android:layout_weight="1.5"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:contentDescription="vanguard"
         android:background="@drawable/vanguard"
 
@@ -142,7 +142,7 @@
         android:id="@+id/btn_scoundrel"
         android:layout_width="0dp"
         android:layout_weight="1.5"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:contentDescription="scoundrel"
         android:background="@drawable/scoundrel"
 
@@ -151,7 +151,7 @@
         android:id="@+id/btn_gunslinger"
         android:layout_width="0dp"
         android:layout_weight="1.5"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:contentDescription="gunslinger"
         android:background="@drawable/gunslinger"
 

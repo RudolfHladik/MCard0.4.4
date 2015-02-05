@@ -6,6 +6,7 @@ import android.content.res.Resources;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 
 import java.util.Arrays;
 import java.util.BitSet;
@@ -82,7 +83,9 @@ public class Char {
     // disciplines[skillful, masterful, heroic][points]
     protected boolean[] disciplines = new boolean[21];
 
-    protected Bitmap avatar;
+
+
+    protected Uri avatarUri;
 
     public Char(int race, String charName, int lvl, int advClass, int role, int specialization, int fraction, int gender, Bitmap avatar){
         super();
@@ -96,7 +99,7 @@ public class Char {
         this.fraction = fraction;
         this.gender = gender;
         Arrays.fill(disciplines, false);
-        this.avatar = avatar;
+
     }
 
     public  Char(){
@@ -111,13 +114,20 @@ public class Char {
         this.fraction = 0;
         this.gender = 0;
         Arrays.fill(disciplines, false);
-        this.avatar = bitmap;
+
+        this.avatarUri = avatarUri;
 
 
 
     }
 
+    public void setAvatarUri(Uri avatarUri) {
+        this.avatarUri = avatarUri;
+    }
 
+    public Uri getAvatarUri() {
+        return avatarUri;
+    }
 
     public String getRace() {
         String sRace;
@@ -183,21 +193,21 @@ public class Char {
         // IMP Advanced classes: 21: juggernaut, 22: marauder, 13: sorcerer, 14: assassin, 15: mercenarz, 16: powertech, 17: operative, 18: sniper
 
         switch(advClass){
-            case 11: aC = guardian;
+            case 0: aC = guardian;
                     break;
-            case 12: aC = sentinel;
+            case 1: aC = sentinel;
                 break;
-            case 13: aC = sage;
+            case 2: aC = sage;
                 break;
-            case 14: aC = shadow;
+            case 3: aC = shadow;
                 break;
-            case 15: aC = commando;
+            case 4: aC = commando;
                 break;
-            case 16: aC = vanguard;
+            case 5: aC = vanguard;
                 break;
-            case 17: aC = scoundrel;
+            case 6: aC = scoundrel;
                 break;
-            case 18: aC = gunslinger;
+            case 7: aC = gunslinger;
                 break;
             case 21: aC = juggernaut;
                 break;
@@ -326,18 +336,5 @@ public class Char {
         this.enviroment = enviroment;
     }
 
-    public Bitmap getAvatar() {
 
-        //TODO save avatar as URI!!
-//        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-//        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-//        String path = Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
-//        Uri uri = Uri.parse(path);
-
-        return avatar;
-    }
-
-    public void setAvatar(Bitmap avatar) {
-        this.avatar = avatar;
-    }
 }

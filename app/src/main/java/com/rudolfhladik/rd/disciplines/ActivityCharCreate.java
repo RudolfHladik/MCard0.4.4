@@ -27,6 +27,7 @@ import android.widget.TextView;
 
 import com.melnykov.fab.FloatingActionButton;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -58,6 +59,8 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
     SeekBar lvlBar;
     TextView lvlTv;
     ImageView avatarIV;
+    Intent imageIntent = new Intent();
+    ImageView sith;
 
 
 
@@ -85,7 +88,7 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
         avatarIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent imageIntent = new Intent();
+
                 imageIntent.setType("image/*");
                 imageIntent.setAction(Intent.ACTION_GET_CONTENT);
 
@@ -94,9 +97,10 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
                 startActivityForResult(
                         Intent.createChooser(imageIntent, "Select photo"), 0);
 
-
             }
         });
+
+
 
 
 
@@ -153,14 +157,11 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
         spinner_gender.setAdapter(adapter_gender);
 
 
-        Drawable avatarDrawable = avatarIV.getDrawable();
 
-        Bitmap avatarBmp = Bitmap.createBitmap(avatarDrawable.getIntrinsicWidth(), avatarDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(avatarBmp);
-        avatarDrawable.setBounds(0,0,canvas.getWidth(), canvas.getHeight());
-        avatarDrawable.draw(canvas);
 
-        newChar.setAvatar(avatarBmp);
+
+
+
 
 //        newChar.setCharName(etCharName.getText().toString());
 //        newChar.setRace(spinner_race.getSelectedItemPosition());
@@ -196,6 +197,9 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
 
                 }else {
 
+
+
+                    newChar.setAvatarUri(uri);
                     newChar.setCharName(etCharName.getText().toString());
                     newChar.setRace(spinner_race.getSelectedItemPosition());
                     newChar.setAdvClass(spinner_ac.getSelectedItemPosition()); // for REP ACs, for IMPs its 21
@@ -209,7 +213,7 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
                     Intent i = new Intent(getApplicationContext(), ActivityDisciplineEditor.class);
                     i.putExtra("Action_edit", edit);
 
-
+                    i.putExtra("AvatarURI", newChar.avatarUri.toString());
                     i.putExtra("CharName", newChar.charName);
                     i.putExtra("Race", newChar.race);
                     i.putExtra("AC", newChar.advClass);
@@ -219,7 +223,7 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
                     i.putExtra("Gender", newChar.gender);
                     i.putExtra("Level", newChar.lvl);
                     i.putExtra("Disciplines", newChar.disciplines );
-                    i.putExtra("Avatar", newChar.avatar);
+
                     startActivity(i);
 //
 //

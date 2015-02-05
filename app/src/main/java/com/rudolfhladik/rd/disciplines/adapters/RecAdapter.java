@@ -118,7 +118,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
 
-
+        viewHolder.charImg.setImageURI(mChars.get(position).getAvatarUri());
         viewHolder.charName.setText(mChars.get(position).charName);
         viewHolder.charAC.setText(mChars.get(position).getAdvClass());
         viewHolder.charRole.setText(mChars.get(position).getRole());

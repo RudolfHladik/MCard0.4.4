@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 
 /**
  * Created by RD on 1.10.2014.
@@ -28,6 +29,7 @@ public class CRUDer {
         contentValues.put(UserDBHelper.COLUMN_CHAR_SPEC, character.specialization);
         contentValues.put(UserDBHelper.COLUMN_CHAR_FRACTION, character.fraction);
         contentValues.put(UserDBHelper.COLUMN_CHAR_GENDER, character.gender);
+        contentValues.put(UserDBHelper.COLUMN_CHAR_AVATAR_URI, character.avatarUri.toString());
         contentValues.put(UserDBHelper.COLUMN_CHAR_DIS0, character.disciplines[0]);
         contentValues.put(UserDBHelper.COLUMN_CHAR_DIS1, character.disciplines[1]);
         contentValues.put(UserDBHelper.COLUMN_CHAR_DIS2, character.disciplines[2]);
@@ -144,10 +146,11 @@ public class CRUDer {
                 charn.specialization = cursor.getInt(6);
                 charn.fraction = cursor.getInt(7);
                 charn.gender = cursor.getInt(8);
+                charn.avatarUri = Uri.parse(cursor.getString(9));
 
                 boolean[] discn = new boolean[21];
                 int booln;
-                for (int n =10; n < 30; n++){
+                for (int n =10; n < 31; n++){
 
                     booln = cursor.getInt(n);
                     if(booln == 0) {
