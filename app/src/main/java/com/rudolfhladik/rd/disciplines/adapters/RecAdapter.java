@@ -2,7 +2,10 @@ package com.rudolfhladik.rd.disciplines.adapters;
 
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -18,6 +21,8 @@ import com.rudolfhladik.rd.disciplines.MainActivity;
 import com.rudolfhladik.rd.disciplines.R;
 import com.rudolfhladik.rd.disciplines.UtilityViewerFragment;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 /**
@@ -117,6 +122,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
+
 
         viewHolder.charImg.setImageURI(mChars.get(position).getAvatarUri());
         viewHolder.charName.setText(mChars.get(position).charName);

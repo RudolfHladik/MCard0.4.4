@@ -171,8 +171,7 @@ public class CRUDer {
 
         }
 
-
-
+        cursor.close();
      return chars;}
 
     public User getUserfromDB(){

@@ -59,8 +59,8 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
     SeekBar lvlBar;
     TextView lvlTv;
     ImageView avatarIV;
-    Intent imageIntent = new Intent();
-    ImageView sith;
+    Intent imageIntent = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
 
 
 
@@ -89,12 +89,13 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
             @Override
             public void onClick(View v) {
 
-                imageIntent.setType("image/*");
-                imageIntent.setAction(Intent.ACTION_GET_CONTENT);
+//                imageIntent.setType("image/*");
+//                imageIntent.setAction(Intent.ACTION_GET_CONTENT);
 
 
 
                 startActivityForResult(
+
                         Intent.createChooser(imageIntent, "Select photo"), 0);
 
             }
