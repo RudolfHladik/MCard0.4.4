@@ -8,8 +8,7 @@ Although the app is still in development, the main function is already available
 
 After you login anonymously(no other option is available yet) you can create your own characters and save their utilities setups
 and than you will always find them in list of Cards on main screen.
+Mind that, design of this app is only functional not polished.
 
 Please be patient, features will be coming Soon™
 
-App require several image resources which you can find in zip file, 
-just extract them in ..\SWTOR Utilities setup\app\src\main\res\
