@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 
+import java.sql.SQLDataException;
+import java.sql.SQLException;
+
 /**
  * Created by RD on 1.10.2014.
  */
@@ -58,6 +61,7 @@ public class CRUDer {
 
         return r;}
 
+
     public long saveUserToDB(User user){
 
         SQLiteDatabase db = helper.getWritableDatabase();
@@ -72,6 +76,19 @@ public class CRUDer {
         db.close();
         return id;
     }
+
+    public void deleteCharFromDB(int ID){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        String query = "DELETE FROM chars WHERE charid=" +ID + ";";
+        try {
+            db.execSQL(query);
+
+        }catch (android.database.SQLException e) {
+
+        }
+
+    }
+
     public Char[] getCharFromDB(int fraction){
         SQLiteDatabase database = helper.getReadableDatabase();
 

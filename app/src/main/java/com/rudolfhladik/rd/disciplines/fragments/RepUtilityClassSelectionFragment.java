@@ -1,4 +1,4 @@
-package com.rudolfhladik.rd.disciplines;
+package com.rudolfhladik.rd.disciplines.fragments;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.rudolfhladik.rd.disciplines.R;
 
 /**
  * Created by RD on 28.1.2015.

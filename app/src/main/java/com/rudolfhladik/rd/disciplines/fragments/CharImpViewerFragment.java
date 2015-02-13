@@ -1,42 +1,42 @@
-package com.rudolfhladik.rd.disciplines;
+package com.rudolfhladik.rd.disciplines.fragments;
 
+import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.melnykov.fab.FloatingActionButton;
+import com.rudolfhladik.rd.disciplines.CRUDer;
+import com.rudolfhladik.rd.disciplines.Char;
+import com.rudolfhladik.rd.disciplines.R;
+import com.rudolfhladik.rd.disciplines.activities.ActivityImpCharCreate;
+import com.rudolfhladik.rd.disciplines.activities.ActivityRepCharCreate;
 import com.rudolfhladik.rd.disciplines.adapters.RecAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by RD on 26.7.2014.
+ * Created by RD on 12.2.2015.
  */
-public class CharViewerFragment extends Fragment {
+public class CharImpViewerFragment extends Fragment{
+
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mRecAdapter;
     private RecyclerView.LayoutManager mRecLayoutManager;
-
+    private Bundle bundle;
     private Intent intent;
-    String vibrant = "";
-    String vibrantDark = "";
-    String vibrantLight = "";
-    String muted = "";
-    String mutedDark = "";
-    String mutedLight = "";
-
-
-
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-         Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_char_viewer, container, false);
 
 //        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.swtor_logo);
@@ -83,21 +83,13 @@ public class CharViewerFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
         mRecLayoutManager = new LinearLayoutManager(view.getContext());
         mRecyclerView.setLayoutManager(mRecLayoutManager);
-        boolean[] dis = new boolean[21];
-        dis[0] = true;
-        dis[1] = true;
-        dis[2] = true;
-        dis[7] = true;
-        dis[8] = true;
-        dis[14] = true;
-        dis[15] = true;
-//        Char Terrel = new Char(9,"Terrel",60, 11,2,1,1,1);
-//        Terrel.setDisciplines(dis);
+
+
         List<Char> items = new ArrayList<Char>();
         Char[] chars = null;
         if (items.isEmpty()){
             CRUDer cruDer = new CRUDer(view.getContext());
-            chars = cruDer.getCharFromDB(0);
+            chars = cruDer.getCharFromDB(1);
             if (chars!= null) {
                 int lenght = chars.length;
                 for (int i = 0; i<lenght; i++){
@@ -109,17 +101,12 @@ public class CharViewerFragment extends Fragment {
         }else {
             //
         }
-//        items.add(Terrel);
-//        items.add(new Char(7,"Terril",60,14,1,2,1,0));
-//        items.add(new Char(7,"Terrell",60,14,1,2,1,0));
-//        items.add(new Char(7,"Fixr",60,14,1,2,1,0));
-//        items.add(new Char(7,"Zeebone",60,14,1,2,1,0));
+//
 
 
 
 
-
-        mRecAdapter = new RecAdapter(items);
+        mRecAdapter = new RecAdapter(items, getActivity());
         mRecyclerView.setAdapter(mRecAdapter);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
@@ -129,13 +116,13 @@ public class CharViewerFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(view.getContext(),ActivityCharCreate.class );
+                intent = new Intent(view.getContext(),ActivityImpCharCreate.class );
                 startActivity(intent);
 
             }
         });
 
 
-    return view;
-}
+        return view;
+    }
 }

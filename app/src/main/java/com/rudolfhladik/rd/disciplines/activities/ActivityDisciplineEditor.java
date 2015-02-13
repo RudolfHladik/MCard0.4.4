@@ -1,21 +1,28 @@
-package com.rudolfhladik.rd.disciplines;
+package com.rudolfhladik.rd.disciplines.activities;
 
-import android.app.Dialog;
-import android.app.Fragment;
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.melnykov.fab.FloatingActionButton;
+import com.rudolfhladik.rd.disciplines.CRUDer;
+import com.rudolfhladik.rd.disciplines.Char;
+import com.rudolfhladik.rd.disciplines.MainActivity;
+import com.rudolfhladik.rd.disciplines.R;
+
 import java.util.Arrays;
 
 /**
- * Created by RD on 26.7.2014.
+ * Created by RD on 19.1.2015.
  */
-public class UtilityViewerFragment extends Fragment {
+public class ActivityDisciplineEditor extends Activity {
+
     // upa = utility point available
     int upa = 7;
     // points spent in skillful area
@@ -23,9 +30,7 @@ public class UtilityViewerFragment extends Fragment {
     // points spent in masterful area
     int m = 0;
     //boolean[][] isSelected = new boolean[2][6]; = [3] [7]
-    boolean[] isSelected;
-    int ac;
-    int fraction;
+    boolean[] isSelected = new boolean[21];
 
     public static final int numberOfUtilities = 21;
 
@@ -47,74 +52,14 @@ public class UtilityViewerFragment extends Fragment {
     int[] operative = new int[numberOfUtilities];
     int[] sniper = new int[numberOfUtilities];
 
-
-
-
-
-
-
     @Override
-    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
-         Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_discipline_edit, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_utility_editor);
 
+        final TextView txtUtilCount = (TextView) findViewById(R.id.txtUtilCount);
 
-
-        final TextView txtUtilCount = (TextView) v.findViewById(R.id.txtUtilCount);
-
-
-        final ImageView[] utilImg = new ImageView[21];
-        // Skillful section
-        utilImg[0] = (ImageView) v.findViewById(R.id.utilImg0);
-        utilImg[1] = (ImageView) v.findViewById(R.id.utilImg1);
-        utilImg[2] = (ImageView) v.findViewById(R.id.utilImg2);
-        utilImg[3] = (ImageView) v.findViewById(R.id.utilImg3);
-        utilImg[4] = (ImageView) v.findViewById(R.id.utilImg4);
-        utilImg[5] = (ImageView) v.findViewById(R.id.utilImg5);
-        utilImg[6] = (ImageView) v.findViewById(R.id.utilImg6);
-        //Masterful section
-        utilImg[7] = (ImageView) v.findViewById(R.id.utilImg7);
-        utilImg[8] = (ImageView) v.findViewById(R.id.utilImg8);
-        utilImg[9] = (ImageView) v.findViewById(R.id.utilImg9);
-        utilImg[10] = (ImageView) v.findViewById(R.id.utilImg10);
-        utilImg[11] = (ImageView) v.findViewById(R.id.utilImg11);
-        utilImg[12] = (ImageView) v.findViewById(R.id.utilImg12);
-        utilImg[13] = (ImageView) v.findViewById(R.id.utilImg13);
-        //Heroic section
-        utilImg[14] = (ImageView) v.findViewById(R.id.utilImg14);
-        utilImg[15] = (ImageView) v.findViewById(R.id.utilImg15);
-        utilImg[16] = (ImageView) v.findViewById(R.id.utilImg16);
-        utilImg[17] = (ImageView) v.findViewById(R.id.utilImg17);
-        utilImg[18] = (ImageView) v.findViewById(R.id.utilImg18);
-        utilImg[19] = (ImageView) v.findViewById(R.id.utilImg19);
-        utilImg[20] = (ImageView) v.findViewById(R.id.utilImg20);
-
-
-        ImageButton[] utilBtn = new ImageButton[21];
-        // Skillful section
-        utilBtn[0] = (ImageButton) v.findViewById(R.id.utilBtn0);
-        utilBtn[1] = (ImageButton) v.findViewById(R.id.utilBtn1);
-        utilBtn[2] = (ImageButton) v.findViewById(R.id.utilBtn2);
-        utilBtn[3] = (ImageButton) v.findViewById(R.id.utilBtn3);
-        utilBtn[4] = (ImageButton) v.findViewById(R.id.utilBtn4);
-        utilBtn[5] = (ImageButton) v.findViewById(R.id.utilBtn5);
-        utilBtn[6] = (ImageButton) v.findViewById(R.id.utilBtn6);
-        //Masterful section
-        utilBtn[7] = (ImageButton) v.findViewById(R.id.utilBtn7);
-        utilBtn[8] = (ImageButton) v.findViewById(R.id.utilBtn8);
-        utilBtn[9] = (ImageButton) v.findViewById(R.id.utilBtn9);
-        utilBtn[10] = (ImageButton) v.findViewById(R.id.utilBtn10);
-        utilBtn[11] = (ImageButton) v.findViewById(R.id.utilBtn11);
-        utilBtn[12] = (ImageButton) v.findViewById(R.id.utilBtn12);
-        utilBtn[13] = (ImageButton) v.findViewById(R.id.utilBtn13);
-        //Heroic section
-        utilBtn[14] = (ImageButton) v.findViewById(R.id.utilBtn14);
-        utilBtn[15] = (ImageButton) v.findViewById(R.id.utilBtn15);
-        utilBtn[16] = (ImageButton) v.findViewById(R.id.utilBtn16);
-        utilBtn[17] = (ImageButton) v.findViewById(R.id.utilBtn17);
-        utilBtn[18] = (ImageButton) v.findViewById(R.id.utilBtn18);
-        utilBtn[19] = (ImageButton) v.findViewById(R.id.utilBtn19);
-        utilBtn[20] = (ImageButton) v.findViewById(R.id.utilBtn20);
+        // init utility images
 
         // guardian utilities images
         guardian[0] = R.drawable.guardian_0;
@@ -469,19 +414,72 @@ public class UtilityViewerFragment extends Fragment {
         sniper[19] = R.drawable.sniper_19;
         sniper[20] = R.drawable.sniper_20;
 
+        final ImageView[] utilImg = new ImageView[21];
+
+        // Skillful section
+        utilImg[0] = (ImageView) findViewById(R.id.utilImg0);
+        utilImg[1] = (ImageView) findViewById(R.id.utilImg1);
+        utilImg[2] = (ImageView) findViewById(R.id.utilImg2);
+        utilImg[3] = (ImageView) findViewById(R.id.utilImg3);
+        utilImg[4] = (ImageView) findViewById(R.id.utilImg4);
+        utilImg[5] = (ImageView) findViewById(R.id.utilImg5);
+        utilImg[6] = (ImageView) findViewById(R.id.utilImg6);
+        //Masterful section
+        utilImg[7] = (ImageView) findViewById(R.id.utilImg7);
+        utilImg[8] = (ImageView) findViewById(R.id.utilImg8);
+        utilImg[9] = (ImageView) findViewById(R.id.utilImg9);
+        utilImg[10] = (ImageView) findViewById(R.id.utilImg10);
+        utilImg[11] = (ImageView) findViewById(R.id.utilImg11);
+        utilImg[12] = (ImageView) findViewById(R.id.utilImg12);
+        utilImg[13] = (ImageView) findViewById(R.id.utilImg13);
+        //Heroic section
+        utilImg[14] = (ImageView) findViewById(R.id.utilImg14);
+        utilImg[15] = (ImageView) findViewById(R.id.utilImg15);
+        utilImg[16] = (ImageView) findViewById(R.id.utilImg16);
+        utilImg[17] = (ImageView) findViewById(R.id.utilImg17);
+        utilImg[18] = (ImageView) findViewById(R.id.utilImg18);
+        utilImg[19] = (ImageView) findViewById(R.id.utilImg19);
+        utilImg[20] = (ImageView) findViewById(R.id.utilImg20);
 
 
+        ImageButton[] utilBtn = new ImageButton[21];
+        // Skillful section
+        utilBtn[0] = (ImageButton) findViewById(R.id.utilBtn0);
+        utilBtn[1] = (ImageButton) findViewById(R.id.utilBtn1);
+        utilBtn[2] = (ImageButton) findViewById(R.id.utilBtn2);
+        utilBtn[3] = (ImageButton) findViewById(R.id.utilBtn3);
+        utilBtn[4] = (ImageButton) findViewById(R.id.utilBtn4);
+        utilBtn[5] = (ImageButton) findViewById(R.id.utilBtn5);
+        utilBtn[6] = (ImageButton) findViewById(R.id.utilBtn6);
+        //Masterful section
+        utilBtn[7] = (ImageButton) findViewById(R.id.utilBtn7);
+        utilBtn[8] = (ImageButton) findViewById(R.id.utilBtn8);
+        utilBtn[9] = (ImageButton) findViewById(R.id.utilBtn9);
+        utilBtn[10] = (ImageButton) findViewById(R.id.utilBtn10);
+        utilBtn[11] = (ImageButton) findViewById(R.id.utilBtn11);
+        utilBtn[12] = (ImageButton) findViewById(R.id.utilBtn12);
+        utilBtn[13] = (ImageButton) findViewById(R.id.utilBtn13);
+        //Heroic section
+        utilBtn[14] = (ImageButton) findViewById(R.id.utilBtn14);
+        utilBtn[15] = (ImageButton) findViewById(R.id.utilBtn15);
+        utilBtn[16] = (ImageButton) findViewById(R.id.utilBtn16);
+        utilBtn[17] = (ImageButton) findViewById(R.id.utilBtn17);
+        utilBtn[18] = (ImageButton) findViewById(R.id.utilBtn18);
+        utilBtn[19] = (ImageButton) findViewById(R.id.utilBtn19);
+        utilBtn[20] = (ImageButton) findViewById(R.id.utilBtn20);
 
 
-        Bundle bundle = this.getArguments();
-        ac = bundle.getInt("AC");
-        fraction = bundle.getInt("Fraction");
-        isSelected = bundle.getBooleanArray("Disciplines");
-        if (isSelected == null) {
-            isSelected = new boolean[21];
+        //
 
+         Intent intent = getIntent();
+        txtUtilCount.setText("" + intent.getIntExtra("AC", 0));
+        boolean action_edit = intent.getBooleanExtra("Action_edit", false);
+
+        if (!action_edit){
             Arrays.fill(isSelected, false);
         }else {
+            isSelected = intent.getBooleanArrayExtra("Disciplines");
+
             for (int i = 0; i < 21; i++ ){
                 if (isSelected[i]){
 
@@ -514,39 +512,38 @@ public class UtilityViewerFragment extends Fragment {
 
                 }
             }
+
         }
 
-
-
-
-
+        int fraction = intent.getIntExtra("Fraction", 0);
+        int ac = intent.getIntExtra("AC", 0);
 
 
         if (fraction==0){
 
             for (int i = 0; i<numberOfUtilities; i++){
 
-              switch (ac){
-                  case 0: utilBtn[i].setImageResource(guardian[i]);
-                      break;
-                  case 1: utilBtn[i].setImageResource(sentinel[i]);
-                      break;
-                  case 2: utilBtn[i].setImageResource(sage[i]);
-                      break;
-                  case 3: utilBtn[i].setImageResource(shadow[i]);
-                      break;
-                  case 4: utilBtn[i].setImageResource(commando[i]);
-                      break;
-                  case 5: utilBtn[i].setImageResource(vanguard[i]);
-                      break;
-                  case 6: utilBtn[i].setImageResource(scoundrel[i]);
-                      break;
-                  case 7: utilBtn[i].setImageResource(gunslinger[i]);
-                      break;
-                  default: utilBtn[i].setImageResource(guardian[i]);
-                      break;
+                switch (ac){
+                    case 0: utilBtn[i].setImageResource(guardian[i]);
+                        break;
+                    case 1: utilBtn[i].setImageResource(sentinel[i]);
+                        break;
+                    case 2: utilBtn[i].setImageResource(sage[i]);
+                        break;
+                    case 3: utilBtn[i].setImageResource(shadow[i]);
+                        break;
+                    case 4: utilBtn[i].setImageResource(commando[i]);
+                        break;
+                    case 5: utilBtn[i].setImageResource(vanguard[i]);
+                        break;
+                    case 6: utilBtn[i].setImageResource(scoundrel[i]);
+                        break;
+                    case 7: utilBtn[i].setImageResource(gunslinger[i]);
+                        break;
+                    default: utilBtn[i].setImageResource(guardian[i]);
+                        break;
 
-              }
+                }
 
             }
 
@@ -582,10 +579,6 @@ public class UtilityViewerFragment extends Fragment {
 
 
         }
-
-
-
-
 
 
         //Skillful listener
@@ -664,16 +657,45 @@ public class UtilityViewerFragment extends Fragment {
                         break;
 
                 }
+                if (isSelected[i]){
+                    isSelected[i] = false;
+                    utilImg[i].setImageResource(R.drawable.lightsdown);
+                    upa++;
+                    if (i<7){
+                        s--;
+                    }else if (i>6&&i<14){
+                        m--;
+                    }
 
 
+                }else if (i<7) {
+                    if (upa > 0) {
+                        isSelected[i] = true;
+                        utilImg[i].setImageResource(R.drawable.lightsup);
+                        upa--;
+                        s++;
 
 
-                CustomDialog descriptionDialog = new CustomDialog(getActivity(),fraction,3, i);
-                descriptionDialog.setCancelable(true);
+                    }
+                }else if (i>6 && i<14){
+                    if (0<upa && upa<5 && s>2){
+                        isSelected[i] = true;
+                        utilImg[i].setImageResource(R.drawable.lightsup);
+                        upa--;
+                        m++;
 
-                descriptionDialog.show();
+                    }
+                }else if (i>13){
+                    if (upa>0 && upa <3 && (s+m>4)){
+                        isSelected[i] = true;
+                        utilImg[i].setImageResource(R.drawable.lightsup);
+                        upa--;
 
 
+                    }
+                }
+
+                txtUtilCount.setText("UPA: " +upa+ " i: " +i + " s: "+s+" m: "+m );
             }
 
 
@@ -704,6 +726,37 @@ public class UtilityViewerFragment extends Fragment {
         utilBtn[19].setOnClickListener(onClickListener);
         utilBtn[20].setOnClickListener(onClickListener);
 
+        FloatingActionButton saveChar = (FloatingActionButton) findViewById(R.id.fab_save_char_toDB);
+        saveChar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Char character = new Char();
+                Intent i = getIntent();
+
+                // TODO pass URI of image instead of Bitmap, it more memore eficient
+                Bitmap av = i.getParcelableExtra("Avatar");
+                character.avatarUri = Uri.parse(i.getStringExtra("AvatarURI"));
+
+                character.setCharName(i.getStringExtra("CharName"));
+                character.setRace(i.getIntExtra("Race", 0));
+                character.setAdvClass(i.getIntExtra("AC", 0));
+                character.setRole(i.getIntExtra("Role", 0));
+                character.setSpecialization(i.getIntExtra("Spec", 0));
+                character.setFraction(i.getIntExtra("Fraction",0));
+                character.setGender(i.getIntExtra("Gender", 0));
+                character.setLvl(i.getIntExtra("Level", 0));
+                    // get disciplines
+                character.setDisciplines(isSelected);
+
+                CRUDer cruder = new CRUDer(getApplicationContext());
+                cruder.saveCharToDB(character);
+                Intent backToMain = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(backToMain);
+                finish();
+
+            }
+        });
 
 
 
@@ -713,6 +766,7 @@ public class UtilityViewerFragment extends Fragment {
 
 
 
-        return v;
-}
+
+
+    }
 }

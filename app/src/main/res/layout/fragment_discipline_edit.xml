@@ -4,7 +4,10 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:fab="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+    android:background="@color/primary"
+
+    >
 
 <LinearLayout
     android:orientation="vertical"
@@ -25,18 +28,13 @@
 
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="24dp"
-        android:paddingLeft="16dp"
-        android:textSize="20sp"
+
         android:text="Skillful"
-        android:textColor="#df000000"
+        style="@style/Utilities_category"
         />
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/material_blue_500"
+        style="@style/Utilities_back"
+
         >
 
         <RelativeLayout
@@ -52,8 +50,8 @@
                 android:layout_centerInParent="true" />
             <ImageButton
                 android:id="@+id/utilBtn0"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
@@ -71,8 +69,8 @@
                 android:layout_centerInParent="true" />
             <ImageButton
                 android:id="@+id/utilBtn1"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
@@ -89,8 +87,8 @@
                 android:layout_centerInParent="true" />
             <ImageButton
                 android:id="@+id/utilBtn2"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
@@ -107,8 +105,8 @@
                 android:layout_centerInParent="true" />
             <ImageButton
                 android:id="@+id/utilBtn3"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
@@ -117,10 +115,8 @@
 
         </LinearLayout>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/material_blue_500"
+        style="@style/Utilities_back"
+
         >
         <RelativeLayout
             android:id="@+id/section1_chliv5"
@@ -135,8 +131,8 @@
                 android:layout_centerInParent="true" />
             <ImageButton
                 android:id="@+id/utilBtn4"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
@@ -153,8 +149,8 @@
                 android:layout_centerInParent="true" />
             <ImageButton
                 android:id="@+id/utilBtn5"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
@@ -171,8 +167,8 @@
                 android:layout_centerInParent="true" />
             <ImageButton
                 android:id="@+id/utilBtn6"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
@@ -182,20 +178,13 @@
 
     <TextView
 
-        android:layout_width="match_parent"
-        android:layout_height="24dp"
-        android:textSize="20sp"
         android:text="Masterful"
-        android:paddingLeft="16dp"
-        android:textColor="#df000000"
-
+        style="@style/Utilities_category"
 
         />
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/material_blue_500"
+        style="@style/Utilities_back"
+
         >
 
         <RelativeLayout
@@ -276,10 +265,8 @@
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/material_blue_500"
+        style="@style/Utilities_back"
+
         >
         <RelativeLayout
             android:id="@+id/section2_chliv5"
@@ -339,21 +326,13 @@
 
     </LinearLayout>
     <TextView
-
-        android:layout_width="match_parent"
-        android:layout_height="24dp"
-        android:textSize="20sp"
+        style="@style/Utilities_category"
         android:text="Heroic"
-        android:paddingLeft="16dp"
-        android:textColor="#df000000"
-
 
         />
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/material_blue_500"
+        style="@style/Utilities_back"
+
         >
 
         <RelativeLayout
@@ -434,10 +413,8 @@
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/material_blue_500"
+        style="@style/Utilities_back"
+
         >
         <RelativeLayout
             android:id="@+id/section3_chliv5"

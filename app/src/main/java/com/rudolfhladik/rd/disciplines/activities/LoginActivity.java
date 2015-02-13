@@ -1,4 +1,4 @@
-package com.rudolfhladik.rd.disciplines;
+package com.rudolfhladik.rd.disciplines.activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -11,6 +11,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.rudolfhladik.rd.disciplines.CRUDer;
+import com.rudolfhladik.rd.disciplines.JSONParser;
+import com.rudolfhladik.rd.disciplines.MainActivity;
+import com.rudolfhladik.rd.disciplines.R;
+import com.rudolfhladik.rd.disciplines.User;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,7 +50,7 @@ public class LoginActivity extends FragmentActivity  {
         try{
 
             if (doesDatabaseExist((ContextWrapper) getApplicationContext(),"swtor.db")){
-                Toast.makeText(context, "databaze existuje", Toast.LENGTH_LONG).show();
+//                Toast.makeText(context, "databaze existuje", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 intent.putExtra("user", "exists");
                 startActivity(intent);
@@ -52,7 +58,7 @@ public class LoginActivity extends FragmentActivity  {
 
 
             }else {
-                Toast.makeText(getApplicationContext(), "databaze neexistuje", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "databaze neexistuje", Toast.LENGTH_SHORT).show();
 
 
 

@@ -18,13 +18,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="avatar"
-        android:paddingLeft="6dp"
-        />
+
     <ImageView
         android:id="@+id/iv_avatar"
         android:layout_width="140dp"
@@ -77,14 +71,7 @@
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
         />
-    <Spinner
-        android:layout_marginTop="10dp"
-        android:id="@+id/spinner_fraction"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        />
+
     <Spinner
         android:layout_marginTop="10dp"
         android:id="@+id/spinner_gender"

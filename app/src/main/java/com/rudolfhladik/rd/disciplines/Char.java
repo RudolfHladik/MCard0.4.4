@@ -49,7 +49,7 @@ public class Char {
 
     public static String juggernaut = "Juggernaut";
     public static String marauder = "Marauder";
-    public static String sorcerer = "orcerer";
+    public static String sorcerer = "Sorcerer";
     public static String assassin = "Assassin";
     public static String mercenary = "Mercenary";
     public static String powertech = "Powertech";
@@ -63,29 +63,29 @@ public class Char {
     public static String heal = "Healer";
 
 
-    protected int charid;
-    protected int race;
+    public int charid;
+    public int race;
     public String charName;
-    protected int lvl;
+    public int lvl;
     // REP Advanced classes: 11: guardian, 12: sentinel, 13: sage, 14: shadow, 15: commando, 16: vanguard, 17: scoundrel, 18: gunslinger
     // IMP Advanced classes: 21: juggernaut, 22: marauder, 13: sorcerer, 14: assassin, 15: mercenarz, 16: powertech, 17: operative, 18: sniper
-    protected int advClass;
+    public int advClass;
     // roles: 0: tank, 1: dps, 2: healer
-    protected int role;
+    public int role;
     // spec 0: pvp, 1: pve
-    protected int enviroment;
+    public int enviroment;
     // spec 0 1 2
-    protected int specialization;
+    public int specialization;
     // side 1: REP, 2: IMP
-    protected int fraction;
+    public int fraction;
     //gender 0: female 1: male  ofc :)
-    protected int gender;
+    public int gender;
     // disciplines[skillful, masterful, heroic][points]
-    protected boolean[] disciplines = new boolean[21];
+    public boolean[] disciplines = new boolean[21];
 
 
 
-    protected Uri avatarUri;
+    public Uri avatarUri;
 
     public Char(int race, String charName, int lvl, int advClass, int role, int specialization, int fraction, int gender, Bitmap avatar){
         super();
@@ -187,49 +187,69 @@ public class Char {
     }
 
     public String getAdvClass() {
-        String aC;
+        String aC = "";
 
         // REP Advanced classes: 11: guardian, 12: sentinel, 13: sage, 14: shadow, 15: commando, 16: vanguard, 17: scoundrel, 18: gunslinger
         // IMP Advanced classes: 21: juggernaut, 22: marauder, 13: sorcerer, 14: assassin, 15: mercenarz, 16: powertech, 17: operative, 18: sniper
-
-        switch(advClass){
-            case 0: aC = guardian;
+        if (fraction == 0) {
+            switch (advClass) {
+                case 0:
+                    aC = guardian;
                     break;
-            case 1: aC = sentinel;
+                case 1:
+                    aC = sentinel;
+                    break;
+                case 2:
+                    aC = sage;
+                    break;
+                case 3:
+                    aC = shadow;
+                    break;
+                case 4:
+                    aC = commando;
+                    break;
+                case 5:
+                    aC = vanguard;
+                    break;
+                case 6:
+                    aC = scoundrel;
+                    break;
+                case 7:
+                    aC = gunslinger;
+                    break;
+            }
+        } else {
+            switch (advClass){
+            case 0:
+                aC = juggernaut;
                 break;
-            case 2: aC = sage;
+            case 1:
+                aC = marauder;
                 break;
-            case 3: aC = shadow;
+            case 2:
+                aC = sorcerer;
                 break;
-            case 4: aC = commando;
+            case 3:
+                aC = assassin;
                 break;
-            case 5: aC = vanguard;
+            case 4:
+                aC = mercenary;
                 break;
-            case 6: aC = scoundrel;
+            case 5:
+                aC = powertech;
                 break;
-            case 7: aC = gunslinger;
+            case 6:
+                aC = operative;
                 break;
-            case 21: aC = juggernaut;
+            case 7:
+                aC = sniper;
                 break;
-            case 22: aC = marauder;
-                break;
-            case 23: aC = sorcerer;
-                break;
-            case 24: aC = assassin;
-                break;
-            case 25: aC = mercenary;
-                break;
-            case 26: aC = powertech;
-                break;
-            case 27: aC = operative;
-                break;
-            case 28: aC = sniper;
-                break;
-            default: aC = human;
+            default:
+                aC = juggernaut;
                 break;
 
         }
-
+    }
         return aC;
     }
 

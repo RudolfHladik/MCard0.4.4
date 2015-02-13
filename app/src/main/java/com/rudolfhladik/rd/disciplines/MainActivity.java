@@ -15,10 +15,13 @@ import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
+import com.rudolfhladik.rd.disciplines.activities.ActivitySmall;
 import com.rudolfhladik.rd.disciplines.adapters.ExpandableListAdapter;
+import com.rudolfhladik.rd.disciplines.fragments.CharImpViewerFragment;
+import com.rudolfhladik.rd.disciplines.fragments.CharRepViewerFragment;
+import com.rudolfhladik.rd.disciplines.fragments.GuidesFragment;
+import com.rudolfhladik.rd.disciplines.fragments.RepUtilityClassSelectionFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -64,7 +67,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content_frame, new CharViewerFragment())
+        fragmentManager.beginTransaction().replace(R.id.content_frame, new CharRepViewerFragment())
                         .addToBackStack("queue")
                         .commit();
         mDrawerTitle = "Republic characters";
@@ -106,9 +109,9 @@ public class MainActivity extends Activity {
         CRUDer localAdapter = new CRUDer(getApplicationContext());
         user = localAdapter.getUserfromDB();
 
-
-        TextView textView = (TextView) findViewById(R.id.idTV);
-        textView.setText(user.getUserID());
+        // user ID check, ID number shows in drawers up left corner
+//        TextView textView = (TextView) findViewById(R.id.idTV);
+//        textView.setText(user.getUserID());
 
 
         /// end drawer toggle
@@ -155,19 +158,19 @@ public class MainActivity extends Activity {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
-                Toast.makeText(
-                        getApplicationContext(),
-                        mListDataHeader.get(groupPosition)
-                                + " : "
-                                + mListDataChild.get(
-                                mListDataHeader.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT)
-                        .show();
+//                Toast.makeText(
+//                        getApplicationContext(),
+//                        mListDataHeader.get(groupPosition)
+//                                + " : "
+//                                + mListDataChild.get(
+//                                mListDataHeader.get(groupPosition)).get(
+//                                childPosition), Toast.LENGTH_SHORT)
+//                        .show();
 
                 switch (childPosition){
                     case 0: selectItem(0);
                         break;
-                    case 1: selectItem(0);
+                    case 1: selectItem(1);
                         break;
                 }
 
@@ -179,19 +182,19 @@ public class MainActivity extends Activity {
             @Override
             public boolean onGroupClick(ExpandableListView parent, View v,
                                         int groupPosition, long id) {
-                 Toast.makeText(getApplicationContext(),
-                 "Group Clicked " + mListDataHeader.get(groupPosition) + groupPosition,
-                 Toast.LENGTH_SHORT).show();
+//                 Toast.makeText(getApplicationContext(),
+//                 "Group Clicked " + mListDataHeader.get(groupPosition) + groupPosition,
+//                 Toast.LENGTH_SHORT).show();
 
                 switch (groupPosition){
 
-                    case 1: selectItem(groupPosition);
+                    case 1: selectItem(groupPosition +1);
                         break;
-                    case 2: selectItem(groupPosition);
+                    case 2: selectItem(groupPosition +1);
                         break;
-                    case 3: selectItem(groupPosition);
+                    case 3: selectItem(groupPosition +1);
                         break;
-                    case 4: selectItem(groupPosition);
+                    case 4: selectItem(groupPosition +1);
                         break;
                 }
                 return false;
@@ -217,7 +220,7 @@ public class MainActivity extends Activity {
         switch (position){
 
             case 0:
-                fragmentManager.beginTransaction().replace(R.id.content_frame, new CharViewerFragment())
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new CharRepViewerFragment())
                         .addToBackStack("queue")
                         .commit();
                 mTitle = "Republic characters";
@@ -226,8 +229,17 @@ public class MainActivity extends Activity {
 //                intent = new Intent(this, Sales.class);
 //                startActivity(intent);
                 break;
+            case 1: fragmentManager.beginTransaction().replace(R.id.content_frame, new CharImpViewerFragment())
+                    .addToBackStack("queue")
+                    .commit();
+                mTitle = "Republic characters";
 
-            case 1:
+                mDrawerLayout.closeDrawers();
+//                intent = new Intent(this, Sales.class);
+//                startActivity(intent);
+                break;
+
+            case 2:
                 fragmentManager.beginTransaction().replace(R.id.content_frame, new RepUtilityClassSelectionFragment())
                         .addToBackStack("queue")
                         .commit();
@@ -241,7 +253,7 @@ public class MainActivity extends Activity {
 
 
                 break;
-            case 2:
+            case 3:
 
                 fragmentManager.beginTransaction().replace(R.id.content_frame, new GuidesFragment())
                         .addToBackStack("queue")
@@ -252,10 +264,10 @@ public class MainActivity extends Activity {
 
                 break;
 
-            case 3: intent = new Intent(this, Settings.class);
+            case 4: intent = new Intent(this, ActivitySmall.class);
                 startActivity(intent);
                 break;
-            case 4:intent = new Intent(this, Help.class);
+            case 5:intent = new Intent(this, Help.class);
                 startActivity(intent);
                 break;
 
@@ -275,7 +287,7 @@ public class MainActivity extends Activity {
 
 
         FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content_frame, new CharViewerFragment())
+        fragmentManager.beginTransaction().replace(R.id.content_frame, new CharRepViewerFragment())
                 .addToBackStack("queue")
                 .commit();
 

@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
 
 
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -26,16 +27,7 @@
 
 
                  </activity>
-                    <activity android:name="com.rudolfhladik.rd.disciplines.Sales"
-                     android:label="@string/sales"
-                     android:parentActivityName="com.rudolfhladik.rd.disciplines.MainActivity">
-
-                    <meta-data
-                        android:name="android.support.PARENT_ACTIVITY"
-                        android:value="com.rudolfhladik.rd.disciplines.MainActivity"/>
-
-                   </activity>
-                   <activity android:name="com.rudolfhladik.rd.disciplines.ActivityCharCreate"
+        <activity android:name=".activities.ActivityRepCharCreate"
                         android:label="Character creation"
                         android:parentActivityName="com.rudolfhladik.rd.disciplines.MainActivity">
 
@@ -44,7 +36,16 @@
                             android:value="com.rudolfhladik.rd.disciplines.MainActivity"/>
 
                    </activity>
-        <activity android:name="com.rudolfhladik.rd.disciplines.ActivityDisciplineEditor"
+        <activity android:name=".activities.ActivityImpCharCreate"
+            android:label="Character creation"
+            android:parentActivityName="com.rudolfhladik.rd.disciplines.MainActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rudolfhladik.rd.disciplines.MainActivity"/>
+
+        </activity>
+        <activity android:name=".activities.ActivityDisciplineEditor"
             android:label="Discipline editor"
             android:parentActivityName="com.rudolfhladik.rd.disciplines.MainActivity">
 
@@ -54,17 +55,17 @@
 
         </activity>
 
-        <activity android:name="com.rudolfhladik.rd.disciplines.ShopDetail"
-            android:label="Shop detail"
-            android:uiOptions="splitActionBarWhenNarrow"
-            android:parentActivityName="com.rudolfhladik.rd.disciplines.Sales">
+        <activity android:name=".activities.ActivityGuideViewer"
+            android:label="Guide viewer"
+            android:theme="@style/AppTheme.TranslucentActionBar"
+            android:parentActivityName="com.rudolfhladik.rd.disciplines.MainActivity">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.rudolfhladik.rd.disciplines.Sales"
+                android:value="com.rudolfhladik.rd.disciplines.MainActivity"
                 />
         </activity>
-        <activity android:name="com.rudolfhladik.rd.disciplines.LoginActivity"
+        <activity android:name=".activities.LoginActivity"
                   android:label="SWTOR Disciplines"
             >
             <intent-filter>
@@ -81,6 +82,22 @@
                 android:value="com.rudolfhladik.rd.disciplines.MainActivity"
                 />
          </activity>
+        <activity android:name="com.rudolfhladik.rd.disciplines.activities.ActivitySmall"
+            android:label="Small"
+            android:parentActivityName="com.rudolfhladik.rd.disciplines.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rudolfhladik.rd.disciplines.MainActivity"
+                />
+        </activity>
+        <activity android:name="com.rudolfhladik.rd.disciplines.activities.ActivityLarge"
+            android:label="Large"
+            android:parentActivityName="com.rudolfhladik.rd.disciplines.activities.ActivitySmall">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rudolfhladik.rd.disciplines.activities.ActivitySmall"
+                />
+        </activity>
         <activity android:name="com.rudolfhladik.rd.disciplines.Help"
             android:label="Help"
             android:parentActivityName="com.rudolfhladik.rd.disciplines.MainActivity">

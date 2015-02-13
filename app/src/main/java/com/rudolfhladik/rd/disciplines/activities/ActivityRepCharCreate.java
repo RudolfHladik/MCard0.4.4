@@ -1,18 +1,11 @@
-package com.rudolfhladik.rd.disciplines;
+package com.rudolfhladik.rd.disciplines.activities;
 
 import android.app.Activity;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
 import android.support.v7.graphics.Palette;
 import android.util.Log;
 import android.view.View;
@@ -26,19 +19,16 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.melnykov.fab.FloatingActionButton;
+import com.rudolfhladik.rd.disciplines.Char;
+import com.rudolfhladik.rd.disciplines.R;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileDescriptor;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
 
 
 /**
  * Created by RD on 18.1.2015.
  */
-public class ActivityCharCreate extends Activity implements AdapterView.OnItemSelectedListener {
+public class ActivityRepCharCreate extends Activity implements AdapterView.OnItemSelectedListener {
 
 // REP CHAR Creatation fragment TODO IMP Char creatation fragment
 
@@ -54,7 +44,7 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
     Spinner spinner_ac;
     Spinner spinner_role;
     Spinner spinner_spec;
-    Spinner spinner_fraction;
+
     Spinner spinner_gender;
     SeekBar lvlBar;
     TextView lvlTv;
@@ -79,7 +69,7 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
         spinner_ac = (Spinner) findViewById(R.id.spinner_ac);
         spinner_role = (Spinner) findViewById(R.id.spinner_role);
         spinner_spec = (Spinner) findViewById(R.id.spinner_spec);
-        spinner_fraction = (Spinner) findViewById(R.id.spinner_fraction);
+
         spinner_gender = (Spinner) findViewById(R.id.spinner_gender);
 
         lvlBar = (SeekBar) findViewById(R.id.lvlBar);
@@ -92,11 +82,11 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
 //                imageIntent.setType("image/*");
 //                imageIntent.setAction(Intent.ACTION_GET_CONTENT);
 
-
+               Intent intenti = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
                 startActivityForResult(
 
-                        Intent.createChooser(imageIntent, "Select photo"), 0);
+                        intenti.createChooser(imageIntent, "Select photo"), 0);
 
             }
         });
@@ -152,8 +142,7 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
         spinner_role.setAdapter(adapter_role);
         adapter_spec.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_spec.setAdapter(adapter_spec);
-        adapter_fraction.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner_fraction.setAdapter(adapter_fraction);
+
         adapter_gender.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_gender.setAdapter(adapter_gender);
 
@@ -174,15 +163,7 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
 //        newChar.setLvl(lvlBar.getProgress() +1);
 
 
-        TextView info = (TextView) findViewById(R.id.tv_info);
-        info.setText("Char name: " + newChar.charName +
-                       "\n Race: " + newChar.getRace() +
-                        "\n AC: " + newChar.getAdvClass() +
-                        "\n Role: " + newChar.getRole() +
-                        "\n Spec: " + newChar.getSpecialization() +
-                        "\n Fraction: " + newChar.getFraction() +
-                        "\n Gender: " + newChar.getGender()
-        );
+
 
 
         FloatingActionButton setDisciplines = (FloatingActionButton) findViewById(R.id.fab_set_disciplines);
@@ -213,8 +194,14 @@ public class ActivityCharCreate extends Activity implements AdapterView.OnItemSe
 
                     Intent i = new Intent(getApplicationContext(), ActivityDisciplineEditor.class);
                     i.putExtra("Action_edit", edit);
+                    Uri u = newChar.avatarUri;
+                    if (u == null){
 
-                    i.putExtra("AvatarURI", newChar.avatarUri.toString());
+                        // change color
+                           u = Uri.parse("android.resource://com.rudolfhladik.rd.disciplines/" + R.drawable.ic_avatar_add);
+                    }
+
+                    i.putExtra("AvatarURI", u.toString());
                     i.putExtra("CharName", newChar.charName);
                     i.putExtra("Race", newChar.race);
                     i.putExtra("AC", newChar.advClass);

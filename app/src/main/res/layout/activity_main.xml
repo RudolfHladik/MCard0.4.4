@@ -22,15 +22,16 @@
         <RelativeLayout
             android:id="@+id/drawer_relative_layout"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
+            android:background="@drawable/swtor_revan_lightning"
 
             >
-            <TextView
-                android:id="@+id/idTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ID:"
-                android:textSize="20dp"
+            <ImageView
+                android:id="@+id/drawer_account_box"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_cover"
+
 
                 />
 
@@ -46,23 +47,6 @@
         />
 
 
-    <!--<ListView android:id="@+id/drawer_list_view"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="240dp"-->
 
-        <!--android:choiceMode="singleChoice"-->
-        <!--android:divider="@android:color/transparent"-->
-        <!--android:dividerHeight="0dp"-->
-        <!--/>-->
-        <ListView
-            android:id="@+id/drawer_menu_list_view"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:divider="@android:color/transparent"
-            android:dividerHeight="0dp"
-            android:choiceMode="singleChoice"
-
-
-            />
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>
