@@ -4,7 +4,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/primary_light"
+    >
 
     <LinearLayout
         android:orientation="vertical"
@@ -16,8 +18,8 @@
             android:id="@+id/txtUtilCount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="7 disciplines point left"
-            android:textSize="32sp"
+            android:text="Utility points available: 7"
+            android:textSize="24sp"
             android:textColor="#8a000000"
 
 
@@ -31,12 +33,13 @@
             android:textSize="20sp"
             android:text="Skillful"
             android:textColor="#df000000"
+            android:background="@color/primary_light"
             />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/material_blue_500"
+            android:background="@color/primary_dark"
             >
 
             <RelativeLayout
@@ -120,7 +123,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/material_blue_500"
+            android:background="@color/primary_dark"
             >
             <RelativeLayout
                 android:id="@+id/section1_chliv5"
@@ -188,6 +191,7 @@
             android:text="Masterful"
             android:paddingLeft="16dp"
             android:textColor="#df000000"
+            android:background="@color/primary_light"
 
 
             />
@@ -195,7 +199,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/material_blue_500"
+            android:background="@color/primary_dark"
+
             >
 
             <RelativeLayout
@@ -279,7 +284,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/material_blue_500"
+            android:background="@color/primary_dark"
+
             >
             <RelativeLayout
                 android:id="@+id/section2_chliv5"
@@ -346,6 +352,7 @@
             android:text="Heroic"
             android:paddingLeft="16dp"
             android:textColor="#df000000"
+            android:background="@color/primary_light"
 
 
             />
@@ -353,7 +360,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/material_blue_500"
+            android:background="@color/primary_dark"
+
             >
 
             <RelativeLayout
@@ -437,7 +445,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/material_blue_500"
+            android:background="@color/primary_dark"
+
             >
             <RelativeLayout
                 android:id="@+id/section3_chliv5"

@@ -534,21 +534,36 @@ public class UtilityViewerFragment extends Fragment {
                   case 0:
 //                      utilBtn[i].setImageResource(guardian[i]);
                             utilBtn[i].setBackgroundResource(guardian[i]);
+                      txtUtilCount.setText("Guardian's utilities");
                       break;
 
                   case 1: utilBtn[i].setBackgroundResource(sentinel[i]);
+                      txtUtilCount.setText("Sentinel's utilities");
+
                       break;
                   case 2: utilBtn[i].setBackgroundResource(sage[i]);
+                      txtUtilCount.setText("Sage's utilities");
+
                       break;
                   case 3: utilBtn[i].setBackgroundResource(shadow[i]);
+                      txtUtilCount.setText("Shadow's utilities");
+
                       break;
                   case 4: utilBtn[i].setBackgroundResource(commando[i]);
+                      txtUtilCount.setText("Commando's utilities");
+
                       break;
                   case 5: utilBtn[i].setBackgroundResource(vanguard[i]);
+                      txtUtilCount.setText("Vanguard's utilities");
+
                       break;
                   case 6: utilBtn[i].setBackgroundResource(scoundrel[i]);
+                      txtUtilCount.setText("Scoundrel's utilities");
+
                       break;
                   case 7: utilBtn[i].setBackgroundResource(gunslinger[i]);
+                      txtUtilCount.setText("Gunslinger's utilities");
+
                       break;
                   default: utilBtn[i].setBackgroundResource(guardian[i]);
                       break;
@@ -565,20 +580,36 @@ public class UtilityViewerFragment extends Fragment {
 
                 switch (ac){
                     case 0: utilBtn[i].setBackgroundResource(juggernaut[i]);
+                        txtUtilCount.setText("Juggernaut's utilities");
+
                         break;
                     case 1: utilBtn[i].setBackgroundResource(marauder[i]);
+                        txtUtilCount.setText("Marauder's utilities");
+
                         break;
                     case 2: utilBtn[i].setBackgroundResource(sorcerer[i]);
+                        txtUtilCount.setText("Sorcerer's utilities");
+
                         break;
                     case 3: utilBtn[i].setBackgroundResource(assassin[i]);
+                        txtUtilCount.setText("Assassin's utilities");
+
                         break;
                     case 4: utilBtn[i].setBackgroundResource(mercenery[i]);
+                        txtUtilCount.setText("Mercenery's utilities");
+
                         break;
                     case 5: utilBtn[i].setBackgroundResource(powertech[i]);
+                        txtUtilCount.setText("Powertech's utilities");
+
                         break;
                     case 6: utilBtn[i].setBackgroundResource(operative[i]);
+                        txtUtilCount.setText("Operative's utilities");
+
                         break;
                     case 7: utilBtn[i].setBackgroundResource(sniper[i]);
+                        txtUtilCount.setText("Sniper's utilities");
+
                         break;
                     default: utilBtn[i].setBackgroundResource(juggernaut[i]);
                         break;
@@ -675,7 +706,7 @@ public class UtilityViewerFragment extends Fragment {
 
 
 
-                CustomDialog descriptionDialog = new CustomDialog(getActivity(),fraction,3, i);
+                CustomDialog descriptionDialog = new CustomDialog(getActivity(),fraction,ac, i);
                 descriptionDialog.setCancelable(true);
 
                 descriptionDialog.show();

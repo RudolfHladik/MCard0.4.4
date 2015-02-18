@@ -100,12 +100,8 @@
             android:layout_weight="1.5"
             android:layout_height="100dp"
             android:contentDescription="sage"
-            android:background="@drawable/ac_select_bg"
-            android:src="@drawable/sage_enhanced_thumb"
-
+            android:background="@drawable/sage_ac"
             android:layout_margin="8dp"
-
-
 
             />
         <ImageButton
@@ -114,7 +110,8 @@
             android:layout_weight="1.5"
             android:layout_height="100dp"
             android:contentDescription="shadow"
-            android:background="@drawable/shadow_ac_"
+            android:background="@drawable/bg_card_image"
+            android:src="@drawable/shadow_ac_"
             android:layout_margin="8dp"
 
 

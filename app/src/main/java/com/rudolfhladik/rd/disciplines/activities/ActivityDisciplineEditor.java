@@ -472,7 +472,7 @@ public class ActivityDisciplineEditor extends Activity {
         //
 
          Intent intent = getIntent();
-        txtUtilCount.setText("" + intent.getIntExtra("AC", 0));
+//        txtUtilCount.setText("" + intent.getIntExtra("AC", 0));
         boolean action_edit = intent.getBooleanExtra("Action_edit", false);
 
         if (!action_edit){
@@ -524,23 +524,23 @@ public class ActivityDisciplineEditor extends Activity {
             for (int i = 0; i<numberOfUtilities; i++){
 
                 switch (ac){
-                    case 0: utilBtn[i].setImageResource(guardian[i]);
+                    case 0: utilBtn[i].setBackgroundResource(guardian[i]);
                         break;
-                    case 1: utilBtn[i].setImageResource(sentinel[i]);
+                    case 1: utilBtn[i].setBackgroundResource(sentinel[i]);
                         break;
-                    case 2: utilBtn[i].setImageResource(sage[i]);
+                    case 2: utilBtn[i].setBackgroundResource(sage[i]);
                         break;
-                    case 3: utilBtn[i].setImageResource(shadow[i]);
+                    case 3: utilBtn[i].setBackgroundResource(shadow[i]);
                         break;
-                    case 4: utilBtn[i].setImageResource(commando[i]);
+                    case 4: utilBtn[i].setBackgroundResource(commando[i]);
                         break;
-                    case 5: utilBtn[i].setImageResource(vanguard[i]);
+                    case 5: utilBtn[i].setBackgroundResource(vanguard[i]);
                         break;
-                    case 6: utilBtn[i].setImageResource(scoundrel[i]);
+                    case 6: utilBtn[i].setBackgroundResource(scoundrel[i]);
                         break;
-                    case 7: utilBtn[i].setImageResource(gunslinger[i]);
+                    case 7: utilBtn[i].setBackgroundResource(gunslinger[i]);
                         break;
-                    default: utilBtn[i].setImageResource(guardian[i]);
+                    default: utilBtn[i].setBackgroundResource(guardian[i]);
                         break;
 
                 }
@@ -554,23 +554,23 @@ public class ActivityDisciplineEditor extends Activity {
             for (int i = 0; i<numberOfUtilities; i++){
 
                 switch (ac){
-                    case 0: utilBtn[i].setImageResource(juggernaut[i]);
+                    case 0: utilBtn[i].setBackgroundResource(juggernaut[i]);
                         break;
-                    case 1: utilBtn[i].setImageResource(marauder[i]);
+                    case 1: utilBtn[i].setBackgroundResource(marauder[i]);
                         break;
-                    case 2: utilBtn[i].setImageResource(sorcerer[i]);
+                    case 2: utilBtn[i].setBackgroundResource(sorcerer[i]);
                         break;
-                    case 3: utilBtn[i].setImageResource(assassin[i]);
+                    case 3: utilBtn[i].setBackgroundResource(assassin[i]);
                         break;
-                    case 4: utilBtn[i].setImageResource(mercenery[i]);
+                    case 4: utilBtn[i].setBackgroundResource(mercenery[i]);
                         break;
-                    case 5: utilBtn[i].setImageResource(powertech[i]);
+                    case 5: utilBtn[i].setBackgroundResource(powertech[i]);
                         break;
-                    case 6: utilBtn[i].setImageResource(operative[i]);
+                    case 6: utilBtn[i].setBackgroundResource(operative[i]);
                         break;
-                    case 7: utilBtn[i].setImageResource(sniper[i]);
+                    case 7: utilBtn[i].setBackgroundResource(sniper[i]);
                         break;
-                    default: utilBtn[i].setImageResource(juggernaut[i]);
+                    default: utilBtn[i].setBackgroundResource(juggernaut[i]);
                         break;
 
                 }
@@ -695,7 +695,9 @@ public class ActivityDisciplineEditor extends Activity {
                     }
                 }
 
-                txtUtilCount.setText("UPA: " +upa+ " i: " +i + " s: "+s+" m: "+m );
+//                txtUtilCount.setText("UPA: " +upa+ " i: " +i + " s: "+s+" m: "+m );
+                txtUtilCount.setText("Utility Points Available: " +upa );
+
             }
 
 

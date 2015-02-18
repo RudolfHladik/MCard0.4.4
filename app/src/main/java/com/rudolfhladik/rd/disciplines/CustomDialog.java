@@ -18,10 +18,10 @@ public class CustomDialog extends Dialog implements View.OnClickListener {
 
 
 
-public CustomDialog(Activity activity,int fraction, int ac, int possition){
+public CustomDialog(Activity activity,int fraction, int ac, int position){
     super(activity);
     this.advClass = ac;
-    this.upPoss = possition;
+    this.upPoss = position;
     this.activity = activity;
     this.fraction = fraction;
 

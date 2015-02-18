@@ -71,56 +71,67 @@ public class RepUtilityClassSelectionFragment extends Fragment implements View.O
     @Override
     public void onClick(View v) {
          int id = v.getId();
+        FragmentManager fragmentManager = getActivity().getFragmentManager();
+        Fragment fragment = new Fragment();
 
         switch (id){
             case R.id.btn_guardian:
+                fragment = new UtilityViewerFragment();
 
                 advancedClass = 0;
                 break;
             case R.id.btn_sentinel:
+                fragment = new UtilityViewerFragment();
 
                 advancedClass = 1;
                 break;
             case R.id.btn_sage:
+                fragment = new UtilityViewerFragment();
 
                 advancedClass = 2;
                 break;
             case R.id.btn_shadow:
+                fragment = new UtilityViewerFragment();
 
                 advancedClass = 3;
                 break;
             case R.id.btn_commando:
+                fragment = new UtilityViewerFragment();
 
                 advancedClass = 4;
                 break;
             case R.id.btn_vanguard:
+                fragment = new UtilityViewerFragment();
 
                 advancedClass = 5;
                 break;
             case R.id.btn_scoundrel:
+                fragment = new UtilityViewerFragment();
 
                 advancedClass = 6;
                 break;
             case R.id.btn_gunslinger:
+                fragment = new UtilityViewerFragment();
 
                 advancedClass = 7;
                 break;
             case R.id.btn_imp:
+                  fragment = new ImpUtilityClassSelectionFragment();
+
+
                 break;
             case R.id.btn_rep:
                 break;
 
             default:
-                advancedClass = 0;
+
                 break;
         }
 
         bundle.putInt("Fraction", rep);
         bundle.putInt("AC", advancedClass);
-        UtilityViewerFragment utilityViewerFragment = new UtilityViewerFragment();
-        utilityViewerFragment.setArguments(bundle);
-        FragmentManager fragmentManager = getActivity().getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content_frame,utilityViewerFragment).commit();
+        fragment.setArguments(bundle);
+        fragmentManager.beginTransaction().replace(R.id.content_frame,fragment).commit();
 
 
 

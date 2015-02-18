@@ -20,7 +20,8 @@
         android:gravity="center_vertical"
 
         android:paddingLeft="10dp"
-        android:textColor="#ffffff"
+        android:textColor="@color/white"
+
 
         />
 </LinearLayout>

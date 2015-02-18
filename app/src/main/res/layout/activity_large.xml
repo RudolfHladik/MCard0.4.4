@@ -6,7 +6,7 @@
     <ImageView
         android:id="@+id/sage"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="350dp"
         android:background="@drawable/sage_enhanced"
 
         />

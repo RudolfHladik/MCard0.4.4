@@ -4,23 +4,30 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.v7.graphics.Palette;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.melnykov.fab.FloatingActionButton;
 import com.rudolfhladik.rd.disciplines.CRUDer;
 import com.rudolfhladik.rd.disciplines.Char;
+import com.rudolfhladik.rd.disciplines.MainActivity;
 import com.rudolfhladik.rd.disciplines.R;
 import com.rudolfhladik.rd.disciplines.fragments.CharImpViewerFragment;
 import com.rudolfhladik.rd.disciplines.fragments.CharRepViewerFragment;
 import com.rudolfhladik.rd.disciplines.fragments.UtilityViewerFragment;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -35,7 +42,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
 
 
         protected CardView cardView;
-        protected ImageView charImg;
+        protected ImageView charImg, sideSymbol;
         protected TextView charName;
         protected TextView charAC;
         protected TextView charRole;
@@ -61,7 +68,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
             charAC = (TextView) v.findViewById(R.id.tv_char_ac);
             charRole = (TextView) v.findViewById(R.id.tv_char_role);
             charEnv = (TextView) v.findViewById(R.id.tv_char_env);
-
+            sideSymbol = (ImageView) v.findViewById(R.id.side);
             btnDel = (TextView) v.findViewById(R.id.btn_delete_char);
             btnEdit = (TextView) v.findViewById(R.id.btn_edit_char);
             btnDisciplines = (TextView) v.findViewById(R.id.btn_disciplines);
@@ -133,7 +140,6 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
 
-
         viewHolder.charImg.setImageURI(mChars.get(position).getAvatarUri());
         viewHolder.charName.setText(mChars.get(position).charName);
         viewHolder.charAC.setText(mChars.get(position).getAdvClass());
@@ -143,6 +149,33 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
         viewHolder.intent.putExtra("Fraction", mChars.get(position).fraction);
         viewHolder.intent.putExtra("AC", mChars.get(position).advClass);
         viewHolder.intent.putExtra("ID", mChars.get(position).charid);
+        int side = mChars.get(position).fraction;
+
+        if (side == 0){
+            viewHolder.sideSymbol.setImageResource(R.drawable.ic_rep);
+
+        }else {
+            viewHolder.sideSymbol.setImageResource(R.drawable.ic_imp);
+//            viewHolder.sideSymbol.set
+        }
+
+        // Palette
+
+        try {
+
+
+
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), mChars.get(position).avatarUri);
+            Palette palette = Palette.generate(bitmap, 6);
+            viewHolder.cardView.setCardBackgroundColor(palette.getMutedColor(context.getResources().getColor(R.color.white)));
+            viewHolder.charName.setTextColor(palette.getVibrantColor(context.getResources().getColor(R.color.primary_text)));
+            viewHolder.charAC.setTextColor(palette.getDarkMutedColor(context.getResources().getColor(R.color.secondary_text)));
+            viewHolder.charRole.setTextColor(palette.getDarkMutedColor(context.getResources().getColor(R.color.secondary_text)));
+            viewHolder.charEnv.setTextColor(palette.getDarkMutedColor(context.getResources().getColor(R.color.secondary_text)));
+        }catch (IOException io){
+
+        }
+
 
         viewHolder.btnDel.setOnClickListener(new View.OnClickListener() {
             @Override

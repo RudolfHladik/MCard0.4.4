@@ -13,7 +13,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginRight="46dp"
+
     >
     <TextView
         android:id="@+id/txtUtilCount"
@@ -50,8 +50,8 @@
                 android:layout_centerInParent="true" />
             <ImageButton
                 android:id="@+id/utilBtn0"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
@@ -69,8 +69,8 @@
                 android:layout_centerInParent="true" />
             <ImageButton
                 android:id="@+id/utilBtn1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
@@ -87,8 +87,8 @@
                 android:layout_centerInParent="true" />
             <ImageButton
                 android:id="@+id/utilBtn2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
@@ -105,8 +105,8 @@
                 android:layout_centerInParent="true" />
             <ImageButton
                 android:id="@+id/utilBtn3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
@@ -131,8 +131,8 @@
                 android:layout_centerInParent="true" />
             <ImageButton
                 android:id="@+id/utilBtn4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
@@ -149,8 +149,8 @@
                 android:layout_centerInParent="true" />
             <ImageButton
                 android:id="@+id/utilBtn5"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
@@ -167,8 +167,8 @@
                 android:layout_centerInParent="true" />
             <ImageButton
                 android:id="@+id/utilBtn6"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>

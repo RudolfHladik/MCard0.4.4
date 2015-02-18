@@ -1,5 +1,6 @@
 package com.rudolfhladik.rd.disciplines;
 
+import android.app.Activity;
 import android.provider.BaseColumns;
 
 /**
@@ -21,5 +22,6 @@ public class SQLContract {
             public static final String COLUMN_NAME_GID = "googleid";
 
         }
+
     }
 

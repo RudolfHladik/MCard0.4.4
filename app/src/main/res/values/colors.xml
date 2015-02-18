@@ -3,9 +3,9 @@
     <!-- Material colors -->
 
 
-    <item name="primary" type="color">#6D4C41</item>
-    <item name="primary_dark" type="color">#4E342E</item>
-    <item name="primary_light" type="color">#BCAAA4</item>
+    <!--<item name="primary" type="color">#6D4C41</item>-->
+    <!--<item name="primary_dark" type="color">#4E342E</item>-->
+    <!--<item name="primary_light" type="color">#BCAAA4</item>-->
     <item name="accent" type="color">#C51162</item>
     <item name="accent_light" type="color">#F50057</item>
 
@@ -14,9 +14,16 @@
 
     <item name="white" type="color">#ffffffff</item>
 
-
-
-
+    <color name="primary">#FF5722</color>
+    <color name="primary_dark">#E64A19</color>
+    <color name="primary_light">#FFCCBC</color>
+    <color name="lime">#ff76ff03</color>
+    <color name="lime_dark">#ff64dd17</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="menu">#263238</color>
 
 
 </resources>

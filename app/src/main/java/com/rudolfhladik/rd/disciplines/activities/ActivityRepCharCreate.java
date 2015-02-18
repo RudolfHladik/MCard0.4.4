@@ -243,18 +243,7 @@ public class ActivityRepCharCreate extends Activity implements AdapterView.OnIte
             uri = data.getData();
             avatar.setImageURI(uri);
 
-            try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
-                Palette palette = Palette.generate(bitmap);
-                FrameLayout frameLayout = (FrameLayout) findViewById(R.id.activity_char_frame);
-                frameLayout.setBackgroundColor(palette.getLightMutedColor(0));
-                FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_set_disciplines);
-                fab.setColorNormal(palette.getVibrantColor(0));
 
-
-            }catch (IOException io){
-
-            }
 
 
         }

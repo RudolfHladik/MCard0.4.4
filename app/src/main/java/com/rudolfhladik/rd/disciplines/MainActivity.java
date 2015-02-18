@@ -20,7 +20,7 @@ import com.rudolfhladik.rd.disciplines.activities.ActivitySmall;
 import com.rudolfhladik.rd.disciplines.adapters.ExpandableListAdapter;
 import com.rudolfhladik.rd.disciplines.fragments.CharImpViewerFragment;
 import com.rudolfhladik.rd.disciplines.fragments.CharRepViewerFragment;
-import com.rudolfhladik.rd.disciplines.fragments.GuidesFragment;
+import com.rudolfhladik.rd.disciplines.activities.ActivityGuides;
 import com.rudolfhladik.rd.disciplines.fragments.RepUtilityClassSelectionFragment;
 
 import java.util.ArrayList;
@@ -232,7 +232,7 @@ public class MainActivity extends Activity {
             case 1: fragmentManager.beginTransaction().replace(R.id.content_frame, new CharImpViewerFragment())
                     .addToBackStack("queue")
                     .commit();
-                mTitle = "Republic characters";
+                mTitle = "Imperial characters";
 
                 mDrawerLayout.closeDrawers();
 //                intent = new Intent(this, Sales.class);
@@ -254,14 +254,8 @@ public class MainActivity extends Activity {
 
                 break;
             case 3:
-
-                fragmentManager.beginTransaction().replace(R.id.content_frame, new GuidesFragment())
-                        .addToBackStack("queue")
-                        .commit();
-                mTitle = "Guides";
-                mDrawerLayout.closeDrawers();
-
-
+                intent = new Intent(this, ActivityGuides.class);
+                startActivity(intent);
                 break;
 
             case 4: intent = new Intent(this, ActivitySmall.class);
@@ -270,9 +264,6 @@ public class MainActivity extends Activity {
             case 5:intent = new Intent(this, Help.class);
                 startActivity(intent);
                 break;
-
-
-
 
         }
 

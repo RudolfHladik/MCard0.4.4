@@ -54,6 +54,15 @@
                 android:value="com.rudolfhladik.rd.disciplines.MainActivity"/>
 
         </activity>
+        <activity android:name=".activities.ActivityGuides"
+            android:label="Guides"
+            android:parentActivityName="com.rudolfhladik.rd.disciplines.MainActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rudolfhladik.rd.disciplines.MainActivity"/>
+
+        </activity>
 
         <activity android:name=".activities.ActivityGuideViewer"
             android:label="Guide viewer"

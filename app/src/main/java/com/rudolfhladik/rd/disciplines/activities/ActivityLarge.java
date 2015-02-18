@@ -47,18 +47,18 @@ public class ActivityLarge extends Activity {
         int cx = (image.getLeft() + image.getRight()) / 2;
         int cy = (image.getTop() + image.getBottom()) / 2;
 
-        int finalRadius = Math.max(image.getWidth(), image.getHeight());
-        Animator animator = ViewAnimationUtils.createCircularReveal(image, cx, cy, 0, finalRadius);
-        animator.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-                image.setVisibility(View.VISIBLE);
-
-            }
-        });
-
-        animator.start();
+//        int finalRadius = Math.max(image.getWidth(), image.getHeight());
+//        Animator animator = ViewAnimationUtils.createCircularReveal(image, cx, cy, 0, finalRadius);
+//        animator.addListener(new AnimatorListenerAdapter() {
+//            @Override
+//            public void onAnimationEnd(Animator animation) {
+//                super.onAnimationEnd(animation);
+//                image.setVisibility(View.VISIBLE);
+//
+//            }
+//        });
+//
+//        animator.start();
 
 
         sage = (ImageView) findViewById(R.id.large);
