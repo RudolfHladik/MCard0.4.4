@@ -105,14 +105,14 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
 
         switch (i){
-            case 0: data = R.drawable.ic_jedi_black;
+            case 0: data = R.drawable.ic_jedi_lime;
 
                 break;
 
-            case 1: data = R.drawable.ic_utiliti_menu;
+            case 1: data = R.drawable.ic_utiliti_menu_lime;
                 break;
 
-            case 2: data = R.drawable.ic_guides;
+            case 2: data = R.drawable.ic_guides_lime;
                 break;
             case 3:
                     data = R.drawable.ic_action_settings;

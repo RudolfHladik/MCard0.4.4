@@ -1,5 +1,6 @@
 package com.rudolfhladik.rd.disciplines;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
@@ -8,10 +9,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -22,6 +25,7 @@ import com.rudolfhladik.rd.disciplines.fragments.CharImpViewerFragment;
 import com.rudolfhladik.rd.disciplines.fragments.CharRepViewerFragment;
 import com.rudolfhladik.rd.disciplines.activities.ActivityGuides;
 import com.rudolfhladik.rd.disciplines.fragments.RepUtilityClassSelectionFragment;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -66,6 +70,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ImageView acAvatar = (ImageView) findViewById(R.id.account_avatar);
+        Picasso.with(getApplicationContext()).load(R.drawable.ic_avatar).transform(new RoundedTransformation(35,0)).resize(72, 72).centerCrop().into(acAvatar);
+
+
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_frame, new CharRepViewerFragment())
                         .addToBackStack("queue")
@@ -93,6 +101,7 @@ public class MainActivity extends Activity {
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
                 getActionBar().setTitle(mDrawerTitle);
+                getActionBar().setDisplayShowCustomEnabled(true);
                 invalidateOptionsMenu();      // creates call to onPrepareOptionsMenu()
             }
         };
@@ -104,6 +113,19 @@ public class MainActivity extends Activity {
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
 
+        LayoutInflater inflater = (LayoutInflater) getActionBar().getThemedContext()
+                .getSystemService(LAYOUT_INFLATER_SERVICE);
+
+        final View customActionBarView = inflater.inflate(
+                R.layout.ab_custom_layout, null);
+
+        final ActionBar actionBar = getActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setIcon(R.drawable.ic_rep);
+        actionBar.setCustomView(customActionBarView);
+        actionBar.setDisplayShowCustomEnabled(true);
 
         User user = new User();
         CRUDer localAdapter = new CRUDer(getApplicationContext());
@@ -224,19 +246,17 @@ public class MainActivity extends Activity {
                         .addToBackStack("queue")
                         .commit();
                 mTitle = "Republic characters";
-
+                getActionBar().setDisplayShowCustomEnabled(false);
                 mDrawerLayout.closeDrawers();
-//                intent = new Intent(this, Sales.class);
-//                startActivity(intent);
+
                 break;
             case 1: fragmentManager.beginTransaction().replace(R.id.content_frame, new CharImpViewerFragment())
                     .addToBackStack("queue")
                     .commit();
                 mTitle = "Imperial characters";
-
+                getActionBar().setDisplayShowCustomEnabled(false);
                 mDrawerLayout.closeDrawers();
-//                intent = new Intent(this, Sales.class);
-//                startActivity(intent);
+//
                 break;
 
             case 2:
@@ -244,6 +264,7 @@ public class MainActivity extends Activity {
                         .addToBackStack("queue")
                         .commit();
                 mTitle = "Utility viewer";
+                getActionBar().setDisplayShowCustomEnabled(false);
                 mDrawerLayout.closeDrawers();
 
 //                fragmentManager.beginTransaction().replace(R.id.content_frame, new UtilityViewerFragment())
@@ -258,7 +279,10 @@ public class MainActivity extends Activity {
                 startActivity(intent);
                 break;
 
-            case 4: intent = new Intent(this, ActivitySmall.class);
+            case 4:
+
+
+                intent = new Intent(this, Settings.class);
                 startActivity(intent);
                 break;
             case 5:intent = new Intent(this, Help.class);

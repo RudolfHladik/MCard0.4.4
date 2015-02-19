@@ -10,23 +10,26 @@
         >
 
     <TextView
+        android:layout_margin="8dp"
         android:id="@+id/ut_point_desc_title"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:textSize="16dp"
+        android:textSize="@dimen/abc_text_size_medium_material"
         android:textColor="@color/accent_light"
         android:text="Title"
         android:paddingLeft="6dp"
 
         />
         <TextView
+            android:layout_margin="8dp"
+
             android:id="@+id/ut_point_desc_passive"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:textSize="14dp"
+            android:textSize="@dimen/abc_text_size_medium_material"
             android:text="Passive"
             android:paddingRight="6dp"
             android:gravity="right"
@@ -38,10 +41,12 @@
     </LinearLayout>
 
     <TextView
+        android:layout_margin="16dp"
+
         android:id="@+id/ut_point_desc_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="12dp"
+        android:textSize="@dimen/abc_text_size_small_material"
         android:textColor="@color/primary_light"
         android:paddingLeft="6dp"
         />

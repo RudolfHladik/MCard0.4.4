@@ -4,7 +4,38 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#aaa"
+    android:background="@color/menu"
     >
+
+
+
+    <ImageButton
+        android:layout_margin="16dp"
+        android:id="@+id/add_account_avatar"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_avatar_add"
+        android:scaleType="centerCrop"
+
+        />
+
+    <Spinner
+        android:layout_margin="16dp"
+        android:id="@+id/region"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </Spinner>
+    <Spinner
+        android:layout_margin="16dp"
+        android:id="@+id/server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        </Spinner>
+
+
 
 </LinearLayout>

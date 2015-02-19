@@ -21,7 +21,8 @@
         android:layout_height="wrap_content"
         android:text="7 disciplines point left"
         android:textSize="32sp"
-        android:textColor="#8a000000"
+        android:textColor="@color/black"
+        android:background="@color/lime"
 
 
         android:gravity="center" />

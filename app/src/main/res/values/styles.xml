@@ -3,6 +3,8 @@
     <!-- Base application theme. -->
     <style name="Theme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/lime</item>
+
     </style>
 
     <style name="Utilities_category" parent="android:Theme.Holo">
@@ -11,7 +13,7 @@
         <item name="android:paddingLeft">16dp</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:background">@color/primary_light</item>
+        <item name="android:background">@color/primary_dark</item>
     </style>
 
     <style name="Utilities_back" parent="android:Theme.Holo">
@@ -19,7 +21,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:layout_width">match_parent</item>
 
-        <item name="android:background">@color/primary_dark</item>
+        <item name="android:background">@color/white</item>
 
     </style>
     <style name="Widget" />
@@ -32,6 +34,8 @@
 
     <style name="Widget.ActionBar.Transparent">
         <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/lime</item>
+
     </style>
 
 </resources>

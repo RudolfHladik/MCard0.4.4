@@ -736,8 +736,7 @@ public class ActivityDisciplineEditor extends Activity {
                 Char character = new Char();
                 Intent i = getIntent();
 
-                // TODO pass URI of image instead of Bitmap, it more memore eficient
-                Bitmap av = i.getParcelableExtra("Avatar");
+
                 character.avatarUri = Uri.parse(i.getStringExtra("AvatarURI"));
 
                 character.setCharName(i.getStringExtra("CharName"));

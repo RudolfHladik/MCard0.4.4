@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+<LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,15 +25,20 @@
             android:id="@+id/btn_rep"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="64dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/ic_rep"
+            android:background="@color/white"
             />
         <ImageButton
 
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="64dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/ic_imp"
+            android:background="@color/white"
+
             />
 
     </LinearLayout>
@@ -40,18 +52,29 @@
             android:layout_weight="1"
             android:layout_height="0dp" />
         <ImageButton
-            android:id="@+id/btn_juggernaout"
+            android:id="@+id/btn_juggernaut"
             android:layout_width="0dp"
             android:layout_weight="1.5"
-            android:layout_height="wrap_content"
             android:contentDescription="@string/ac_jugger"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/jugger_ac_white"
+            android:background="@color/white"
+            android:layout_margin="8dp"
+
             />
         <ImageButton
             android:id="@+id/btn_mara"
             android:layout_width="0dp"
             android:layout_weight="1.5"
-            android:layout_height="wrap_content"
             android:contentDescription="@string/ac_mara"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mara_ac_white"
+            android:background="@color/white"
+            android:layout_margin="8dp"
+
+
             />
         <View
             android:layout_width="0dp"
@@ -71,15 +94,27 @@
             android:id="@+id/btn_sorc"
             android:layout_width="0dp"
             android:layout_weight="1.5"
-            android:layout_height="wrap_content"
             android:contentDescription="@string/ac_sorc"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sorc_ac_white"
+            android:background="@color/white"
+            android:layout_margin="8dp"
+
+
             />
         <ImageButton
             android:id="@+id/btn_sin"
             android:layout_width="0dp"
             android:layout_weight="1.5"
-            android:layout_height="wrap_content"
             android:contentDescription="@string/ac_sin"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sin_ac_white"
+            android:background="@color/white"
+            android:layout_margin="8dp"
+
+
             />
         <View
             android:layout_width="0dp"
@@ -100,15 +135,27 @@
             android:id="@+id/btn_merc"
             android:layout_width="0dp"
             android:layout_weight="1.5"
-            android:layout_height="wrap_content"
             android:contentDescription="@string/ac_merc"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/merc_ac_white"
+            android:background="@color/white"
+            android:layout_margin="8dp"
+
+
             />
         <ImageButton
             android:id="@+id/btn_pt"
             android:layout_width="0dp"
             android:layout_weight="1.5"
-            android:layout_height="wrap_content"
             android:contentDescription="@string/ac_pt"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pt_ac_white"
+            android:background="@color/white"
+            android:layout_margin="8dp"
+
+
             />
         <View
             android:layout_width="0dp"
@@ -129,15 +176,26 @@
             android:id="@+id/btn_op"
             android:layout_width="0dp"
             android:layout_weight="1.5"
-            android:layout_height="wrap_content"
             android:contentDescription="@string/ac_op"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/operative_ac_white"
+            android:background="@color/white"
+            android:layout_margin="8dp"
+
+
             />
         <ImageButton
             android:id="@+id/btn_sniper"
             android:layout_width="0dp"
             android:layout_weight="1.5"
-            android:layout_height="wrap_content"
             android:contentDescription="@string/ac_sniper"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sniper_ac_white"
+            android:background="@color/white"
+            android:layout_margin="8dp"
+
             />
         <View
             android:layout_width="0dp"
@@ -148,3 +206,4 @@
 
 
 </LinearLayout>
+    </ScrollView>

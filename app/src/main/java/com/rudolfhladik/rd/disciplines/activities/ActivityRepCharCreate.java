@@ -198,7 +198,7 @@ public class ActivityRepCharCreate extends Activity implements AdapterView.OnIte
                     if (u == null){
 
                         // change color
-                           u = Uri.parse("android.resource://com.rudolfhladik.rd.disciplines/" + R.drawable.ic_avatar_add);
+                           u = Uri.parse("android.resource://com.rudolfhladik.rd.disciplines/" + R.drawable.ic_avatar);
                     }
 
                     i.putExtra("AvatarURI", u.toString());

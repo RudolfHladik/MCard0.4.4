@@ -146,6 +146,44 @@
 
     <string name="spec">Specialization</string>
 
+    <!--           US      Servers              -->
+    <!--           RP-PVP              -->
+    <string name="jungma">Jung Ma</string>
+    <!--           RP              -->
+    <string name="Begeerencolony">Bergeren Colony</string>
+    <string name="ebonhawk">The Ebon Hawk</string>
+    <!--           PVP              -->
+    <string name="bastion">The Bastion</string>
+    <string name="prophecyofthefive">Prophecy of the Five</string>
+    <!--           PVE              -->
+    <string name="harbringer">The Harbringer</string>
+    <string name="jedicovenant">Jedi Covenant</string>
+    <string name="shadowlands">The Shadowlands</string>
+
+    <!--           EU      Servers              -->
+    <!--           French              -->
+    <!--           RP              -->
+    <string name="battlemeditation">Battle Meditation</string>
+    <!--           PVP              -->
+    <string name="darthnihilus">Darth Nihilus</string>
+    <!--           PVE              -->
+    <string name="mantleoftheforce">Mantle of the Force</string>
+    <!--           German              -->
+    <!--           RP              -->
+    <string name="vanjervalischain">Vanjervalis Chain</string>
+    <!--           PVP              -->
+    <string name="jarkaisword">JarKai Sword</string>
+    <!--           PVE              -->
+    <string name="t3m4">T3-M4</string>
+    <!--           English              -->
+    <!--           RP              -->
+    <string name="progenitor">The Progenitor</string>
+    <!--           PVP              -->
+    <string name="tomboffreedonnadd">Tomb of Freedon Nadd</string>
+    <!--           PVE              -->
+    <string name="redeclipse">The Red Eclipse</string>
+
+
 
 
 </resources>

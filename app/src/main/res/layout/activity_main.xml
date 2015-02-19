@@ -32,15 +32,81 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/swtor_group"
+                android:src="@drawable/swtor_revan_lightning"
+
 
 
 
                 />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:id="@+id/account_avatar"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
 
 
-            </RelativeLayout>
+                    />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="16dp"/>
+                    <TextView
+                        android:paddingLeft="6dp"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="Tomb of Freedon Nadd"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
 
+                            android:paddingLeft="6dp"
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="24dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:text="PvE"
+                            android:textColor="@color/black"
+                            />
+                        <TextView
+                            android:paddingLeft="16dp"
+                            android:layout_width="wrap_content"
+
+
+                            android:layout_height="24dp"
+
+                            android:text="US"
+                            android:textColor="@color/black"
+
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="16dp"/>
     <ExpandableListView
         android:id="@+id/expList"
         android:layout_width="match_parent"

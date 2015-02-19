@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_dark"
+    android:background="@color/white"
     >
 
     <LinearLayout
@@ -21,24 +21,22 @@
         />
         <ImageButton
 
+            android:id="@+id/btn_rep"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="58dp"
+            android:layout_height="64dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/ic_rep"
             android:background="@color/white"
             />
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="0.1"
-            android:layout_height="0dp"
 
-            />
 
         <ImageButton
             android:id="@+id/btn_imp"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="58dp"
+            android:layout_height="64dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/ic_imp"
             android:background="@color/white"
 
@@ -50,7 +48,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:layout_marginTop="16dp"
+
     >
     <View
         android:layout_width="0dp"
@@ -62,7 +60,7 @@
         android:layout_weight="1.5"
         android:layout_height="100dp"
         android:contentDescription="guardian"
-        android:background="@drawable/guard_ac"
+        android:background="@drawable/guard_ac_white"
         android:layout_margin="8dp"
 
         />
@@ -72,7 +70,7 @@
         android:layout_weight="1.5"
         android:layout_height="100dp"
         android:contentDescription="sentinel"
-        android:background="@drawable/sent_ac"
+        android:background="@drawable/sent_ac_white"
         android:layout_margin="8dp"
 
 
@@ -97,7 +95,7 @@
             android:layout_weight="1.5"
             android:layout_height="100dp"
             android:contentDescription="sage"
-            android:background="@drawable/sage_ac"
+            android:background="@drawable/sage_ac_white"
             android:layout_margin="8dp"
 
 
@@ -108,7 +106,7 @@
             android:layout_weight="1.5"
             android:layout_height="100dp"
             android:contentDescription="shadow"
-            android:background="@drawable/shadow_ac_"
+            android:background="@drawable/shadow_ac_white"
             android:layout_margin="8dp"
 
 
@@ -134,7 +132,7 @@
         android:layout_weight="1.5"
         android:layout_height="100dp"
         android:contentDescription="commando"
-        android:background="@drawable/mando_ac"
+        android:background="@drawable/mando_ac_white"
         android:layout_margin="8dp"
 
 
@@ -145,7 +143,7 @@
         android:layout_weight="1.5"
         android:layout_height="100dp"
         android:contentDescription="vanguard"
-        android:background="@drawable/vang_ac"
+        android:background="@drawable/vang_ac_white"
         android:layout_margin="8dp"
 
 
@@ -171,7 +169,7 @@
         android:layout_weight="1.5"
         android:layout_height="100dp"
         android:contentDescription="scoundrel"
-        android:background="@drawable/scoundrel_ac"
+        android:background="@drawable/scoundrel_ac_white"
         android:layout_margin="8dp"
 
 
@@ -182,7 +180,7 @@
         android:layout_weight="1.5"
         android:layout_height="100dp"
         android:contentDescription="gunslinger"
-        android:background="@drawable/slinger_ac"
+        android:background="@drawable/slinger_ac_white"
         android:layout_margin="8dp"
 
         />
