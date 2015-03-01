@@ -12,5 +12,7 @@ Mind that, design of this app is only functional not polished.
 
 Please be patient, features will be coming Soon™
 
-<img src="http://goo.gl/zNsv3k"></img>
-
+<img src="http://rudolfhladik.com/swtor_app/swtor_app_promo_1.png" width="160px" height="260px"></img>
+<img src="http://rudolfhladik.com/swtor_app/swtor_app_promo_2.png" width="160px" height="260px"></img>
+<img src="http://rudolfhladik.com/swtor_app/swtor_app_promo_3.png" width="160px" height="260px"></img>
+<img src="http://rudolfhladik.com/swtor_app/swtor_app_promo_4.png" width="160px" height="260px"></img>
