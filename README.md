@@ -12,3 +12,5 @@ Mind that, design of this app is only functional not polished.
 
 Please be patient, features will be coming Soon™
 
+<img src="http://goo.gl/zNsv3k"></img>
+
