@@ -19,7 +19,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
 
+        android:id="@+id/test_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <ImageView
         android:id="@+id/iv_avatar"
         android:layout_width="140dp"

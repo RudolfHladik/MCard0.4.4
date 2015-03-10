@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.graphics.Palette;
@@ -25,6 +26,8 @@ import com.rudolfhladik.rd.disciplines.CRUDer;
 import com.rudolfhladik.rd.disciplines.Char;
 import com.rudolfhladik.rd.disciplines.MainActivity;
 import com.rudolfhladik.rd.disciplines.R;
+import com.rudolfhladik.rd.disciplines.activities.ActivityImpCharCreate;
+import com.rudolfhladik.rd.disciplines.activities.ActivityRepCharCreate;
 import com.rudolfhladik.rd.disciplines.fragments.CharImpViewerFragment;
 import com.rudolfhladik.rd.disciplines.fragments.CharRepViewerFragment;
 import com.rudolfhladik.rd.disciplines.fragments.UtilityViewerFragment;
@@ -74,6 +77,8 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
             btnDel = (TextView) v.findViewById(R.id.btn_delete_char);
             btnEdit = (TextView) v.findViewById(R.id.btn_edit_char);
             btnDisciplines = (TextView) v.findViewById(R.id.btn_disciplines);
+
+
 
 
 
@@ -163,20 +168,49 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
 
         // Palette
 
-        try {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+            try {
 
 
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), mChars.get(position).avatarUri);
+                Palette palette = Palette.generate(bitmap, 6);
+                viewHolder.cardView.setCardBackgroundColor(palette.getMutedColor(context.getResources().getColor(R.color.white)));
+                viewHolder.charName.setTextColor(palette.getVibrantColor(context.getResources().getColor(R.color.primary_text)));
+                viewHolder.charAC.setTextColor(palette.getDarkMutedColor(context.getResources().getColor(R.color.secondary_text)));
+                viewHolder.charRole.setTextColor(palette.getDarkMutedColor(context.getResources().getColor(R.color.secondary_text)));
+                viewHolder.charEnv.setTextColor(palette.getDarkMutedColor(context.getResources().getColor(R.color.secondary_text)));
+            } catch (IOException io) {
 
-            Bitmap bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), mChars.get(position).avatarUri);
-            Palette palette = Palette.generate(bitmap, 6);
-            viewHolder.cardView.setCardBackgroundColor(palette.getMutedColor(context.getResources().getColor(R.color.white)));
-            viewHolder.charName.setTextColor(palette.getVibrantColor(context.getResources().getColor(R.color.primary_text)));
-            viewHolder.charAC.setTextColor(palette.getDarkMutedColor(context.getResources().getColor(R.color.secondary_text)));
-            viewHolder.charRole.setTextColor(palette.getDarkMutedColor(context.getResources().getColor(R.color.secondary_text)));
-            viewHolder.charEnv.setTextColor(palette.getDarkMutedColor(context.getResources().getColor(R.color.secondary_text)));
-        }catch (IOException io){
-
+            }
         }
+
+        viewHolder.btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int id =  mChars.get(position).charid;
+                int side = mChars.get(position).fraction;
+                Bundle bundle = new Bundle();
+                Intent intent = new Intent();
+                intent.putExtra("charID", id);
+                intent.putExtra("fraction", side);
+                intent.putExtra("edit", true);
+//                bundle.putInt("charID", id);
+//                bundle.putInt("fraction", side);
+//                bundle.putBoolean("edit", true);
+                if (side== 0) {
+                    intent.setClass(v.getContext(), ActivityRepCharCreate.class);
+                    v.getContext().startActivity(intent);
+
+                }else if (side==1){
+                    intent.setClass(v.getContext(), ActivityImpCharCreate.class);
+                    v.getContext().startActivity(intent);
+
+                }
+
+
+            }
+        });
 
 
         viewHolder.btnDel.setOnClickListener(new View.OnClickListener() {
@@ -192,6 +226,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
 
             }
         });
+
 
     }
 }

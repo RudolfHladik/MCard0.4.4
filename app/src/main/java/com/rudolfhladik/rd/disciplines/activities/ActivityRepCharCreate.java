@@ -5,24 +5,21 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.v7.graphics.Palette;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.melnykov.fab.FloatingActionButton;
+import com.rudolfhladik.rd.disciplines.CRUDer;
 import com.rudolfhladik.rd.disciplines.Char;
 import com.rudolfhladik.rd.disciplines.R;
-
-import java.io.IOException;
 
 
 /**
@@ -47,11 +44,11 @@ public class ActivityRepCharCreate extends Activity implements AdapterView.OnIte
 
     Spinner spinner_gender;
     SeekBar lvlBar;
-    TextView lvlTv;
+    TextView lvlTv,test_tv;
     ImageView avatarIV;
     Intent imageIntent = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-
-
+    Intent editIntent;
+    Bundle bundle;
 
 
 
@@ -63,17 +60,25 @@ public class ActivityRepCharCreate extends Activity implements AdapterView.OnIte
 
         setContentView(R.layout.activity_char_creation);
         avatarIV = (ImageView) findViewById(R.id.iv_avatar);
-
+        test_tv = (TextView) findViewById(R.id.test_tv);
         etCharName = (EditText) findViewById(R.id.et_char_name);
         spinner_race = (Spinner) findViewById(R.id.spinner_race);
         spinner_ac = (Spinner) findViewById(R.id.spinner_ac);
         spinner_role = (Spinner) findViewById(R.id.spinner_role);
         spinner_spec = (Spinner) findViewById(R.id.spinner_spec);
-
         spinner_gender = (Spinner) findViewById(R.id.spinner_gender);
 
         lvlBar = (SeekBar) findViewById(R.id.lvlBar);
         lvlTv = (TextView) findViewById(R.id.tv_lvl);
+//        bundle = getIntent().getExtras();
+        editIntent = getIntent();
+        edit = editIntent.getBooleanExtra("edit", false);
+//        Toast.makeText(this, "" + edit, Toast.LENGTH_LONG).show();
+        int charID =  editIntent.getIntExtra("charID", 0);
+        int fractionEdit =  editIntent.getIntExtra("fraction", 0);
+
+
+
 
         avatarIV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,7 +87,7 @@ public class ActivityRepCharCreate extends Activity implements AdapterView.OnIte
 //                imageIntent.setType("image/*");
 //                imageIntent.setAction(Intent.ACTION_GET_CONTENT);
 
-               Intent intenti = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+               Intent intenti = new Intent(Intent.ACTION_OPEN_DOCUMENT, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
                 startActivityForResult(
 
@@ -147,6 +152,27 @@ public class ActivityRepCharCreate extends Activity implements AdapterView.OnIte
         spinner_gender.setAdapter(adapter_gender);
 
 
+        if (edit){
+            Char editChar = new Char();
+            CRUDer editCruder = new CRUDer(this);
+            editChar = editCruder.getCharFromDB(charID);
+            test_tv.setText(" " + editChar.charName + editChar.race + editChar);
+            avatarIV.setImageURI(editChar.avatarUri);
+            etCharName.setText(editChar.charName);
+            spinner_race.setSelection(editChar.race);
+            spinner_ac.setSelection(editChar.advClass);
+            spinner_role.setSelection(editChar.role);
+            spinner_spec.setSelection(editChar.specialization);
+            spinner_gender.setSelection(editChar.gender);
+            lvlBar.setProgress(editChar.lvl - 1);
+            newChar.disciplines = editChar.disciplines;
+            newChar.avatarUri = editChar.avatarUri;
+            newChar.charid = charID;
+
+
+        }
+
+
 
 
 
@@ -176,6 +202,38 @@ public class ActivityRepCharCreate extends Activity implements AdapterView.OnIte
 
 
                 if (edit){
+
+                    newChar.setCharName(etCharName.getText().toString());
+                    newChar.setRace(spinner_race.getSelectedItemPosition());
+                    newChar.setAdvClass(spinner_ac.getSelectedItemPosition()); // for REP ACs, for IMPs its 21
+                    newChar.setRole(spinner_role.getSelectedItemPosition());
+                    newChar.setSpecialization(spinner_spec.getSelectedItemPosition());
+                    newChar.setFraction(0); //0 for REP  1 for IMP
+                    newChar.setGender(spinner_gender.getSelectedItemPosition());
+                    newChar.setLvl(lvlBar.getProgress() +1);
+
+
+                    Intent i = new Intent(getApplicationContext(), ActivityDisciplineEditor.class);
+                    i.putExtra("Action_edit", edit);
+                    Uri u = newChar.avatarUri;
+                    if (u == null){
+
+                        // change color
+                        u = Uri.parse("android.resource://com.rudolfhladik.rd.disciplines/" + R.drawable.ic_avatar);
+                    }
+
+                    i.putExtra("AvatarURI", u.toString());
+                    i.putExtra("CharName", newChar.charName);
+                    i.putExtra("Race", newChar.race);
+                    i.putExtra("AC", newChar.advClass);
+                    i.putExtra("Role", newChar.role );
+                    i.putExtra("Spec", newChar.specialization);
+                    i.putExtra("Fraction", newChar.fraction);
+                    i.putExtra("Gender", newChar.gender);
+                    i.putExtra("Level", newChar.lvl);
+                    i.putExtra("Disciplines", newChar.disciplines );
+                    i.putExtra("CharID", newChar.charid);
+                    startActivity(i);
 
                 }else {
 

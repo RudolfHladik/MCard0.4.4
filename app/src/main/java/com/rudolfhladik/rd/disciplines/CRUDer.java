@@ -88,8 +88,42 @@ public class CRUDer {
         }
 
     }
+    public Char getCharFromDB(int id){
+        Char chara = new Char();
+        SQLiteDatabase db = helper.getReadableDatabase();
+        String rawQuery = "";
+        rawQuery = "Select *  from chars where charid = " +id + ";";
+        Cursor cursor = db.rawQuery(rawQuery, null);
+        cursor.moveToFirst();
+        chara.charid = cursor.getInt(0);
+        chara.charName = cursor.getString(1);
+        chara.race = cursor.getInt(2);
+        chara.lvl = cursor.getInt(3);
+        chara.advClass = cursor.getInt(4);
+        chara.role = cursor.getInt(5);
+        chara.specialization = cursor.getInt(6);
+        chara.fraction = cursor.getInt(7);
+        chara.gender = cursor.getInt(8);
+        chara.avatarUri = Uri.parse(cursor.getString(9));
 
-    public Char[] getCharFromDB(int fraction){
+        boolean[] discn = new boolean[21];
+        int booln;
+        for (int n =10; n < 31; n++){
+
+            booln = cursor.getInt(n);
+            if(booln == 0) {
+                discn[n-10] = false;
+            }else {
+                discn[n-10] = true;
+
+            }
+        }
+        chara.disciplines = discn;
+        cursor.close();
+    return chara;
+    }
+
+    public Char[] getCharsFromDB(int fraction){
         SQLiteDatabase database = helper.getReadableDatabase();
 
 

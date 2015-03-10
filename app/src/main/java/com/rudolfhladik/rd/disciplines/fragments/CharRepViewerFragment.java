@@ -101,7 +101,7 @@ public class CharRepViewerFragment extends Fragment {
         Char[] chars = null;
         if (items.isEmpty()){
             CRUDer cruDer = new CRUDer(view.getContext());
-            chars = cruDer.getCharFromDB(0);
+            chars = cruDer.getCharsFromDB(0);
             if (chars!= null) {
                 int lenght = chars.length;
                 for (int i = 0; i<lenght; i++){

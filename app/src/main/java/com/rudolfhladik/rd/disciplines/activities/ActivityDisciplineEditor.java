@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.melnykov.fab.FloatingActionButton;
 import com.rudolfhladik.rd.disciplines.CRUDer;
@@ -56,6 +57,8 @@ public class ActivityDisciplineEditor extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_utility_editor);
+
+
 
         final TextView txtUtilCount = (TextView) findViewById(R.id.txtUtilCount);
 
@@ -473,7 +476,7 @@ public class ActivityDisciplineEditor extends Activity {
 
          Intent intent = getIntent();
 //        txtUtilCount.setText("" + intent.getIntExtra("AC", 0));
-        boolean action_edit = intent.getBooleanExtra("Action_edit", false);
+        final boolean action_edit = intent.getBooleanExtra("Action_edit", false);
 
         if (!action_edit){
             Arrays.fill(isSelected, false);
@@ -703,8 +706,9 @@ public class ActivityDisciplineEditor extends Activity {
 
         };
 
-
-
+        Intent test = getIntent();
+        int spicie = test.getIntExtra("AC", 0);
+        Toast.makeText(getApplicationContext(), "" + spicie , Toast.LENGTH_LONG).show();
 
         utilBtn[0].setOnClickListener(onClickListener);
         utilBtn[1].setOnClickListener(onClickListener);
@@ -733,9 +737,9 @@ public class ActivityDisciplineEditor extends Activity {
             @Override
             public void onClick(View v) {
 
+
                 Char character = new Char();
                 Intent i = getIntent();
-
 
                 character.avatarUri = Uri.parse(i.getStringExtra("AvatarURI"));
 
@@ -750,7 +754,13 @@ public class ActivityDisciplineEditor extends Activity {
                     // get disciplines
                 character.setDisciplines(isSelected);
 
+
                 CRUDer cruder = new CRUDer(getApplicationContext());
+                if (action_edit){
+                    character.charid = i.getIntExtra("CharID", 0);
+                    cruder.deleteCharFromDB(character.charid);
+                }
+
                 cruder.saveCharToDB(character);
                 Intent backToMain = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(backToMain);

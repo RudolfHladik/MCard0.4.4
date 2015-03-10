@@ -123,7 +123,7 @@ public class MainActivity extends Activity {
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setIcon(R.drawable.ic_rep);
+
         actionBar.setCustomView(customActionBarView);
         actionBar.setDisplayShowCustomEnabled(true);
 

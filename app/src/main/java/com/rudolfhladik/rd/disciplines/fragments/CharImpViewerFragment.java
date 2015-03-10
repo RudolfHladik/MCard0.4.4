@@ -1,14 +1,11 @@
 package com.rudolfhladik.rd.disciplines.fragments;
 
-import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +15,6 @@ import com.rudolfhladik.rd.disciplines.CRUDer;
 import com.rudolfhladik.rd.disciplines.Char;
 import com.rudolfhladik.rd.disciplines.R;
 import com.rudolfhladik.rd.disciplines.activities.ActivityImpCharCreate;
-import com.rudolfhladik.rd.disciplines.activities.ActivityRepCharCreate;
 import com.rudolfhladik.rd.disciplines.adapters.RecAdapter;
 
 import java.util.ArrayList;
@@ -89,7 +85,7 @@ public class CharImpViewerFragment extends Fragment{
         Char[] chars = null;
         if (items.isEmpty()){
             CRUDer cruDer = new CRUDer(view.getContext());
-            chars = cruDer.getCharFromDB(1);
+            chars = cruDer.getCharsFromDB(1);
             if (chars!= null) {
                 int lenght = chars.length;
                 for (int i = 0; i<lenght; i++){
