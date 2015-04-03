@@ -81,11 +81,11 @@ public class ActivityImpCharCreate extends Activity {
 //                imageIntent.setType("image/*");
 //                imageIntent.setAction(Intent.ACTION_GET_CONTENT);
 
-                Intent intenti = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                Intent intenti = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
                 startActivityForResult(
 
-                        intenti.createChooser(imageIntent, "Select photo"), 0);
+                        Intent.createChooser(imageIntent, "Select photo"), 0);
 
             }
         });
@@ -292,7 +292,7 @@ public class ActivityImpCharCreate extends Activity {
 
 
             }catch (IOException io){
-
+                io.printStackTrace();
             }
 
 

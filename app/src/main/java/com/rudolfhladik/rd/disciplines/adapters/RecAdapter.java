@@ -138,10 +138,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
     public RecAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.char_item, parent, false);
 
-        ViewHolder vh = new ViewHolder(v);
-
-
-        return vh;
+        return new ViewHolder(v);
     }
 
     @Override
@@ -181,7 +178,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
                 viewHolder.charRole.setTextColor(palette.getDarkMutedColor(context.getResources().getColor(R.color.secondary_text)));
                 viewHolder.charEnv.setTextColor(palette.getDarkMutedColor(context.getResources().getColor(R.color.secondary_text)));
             } catch (IOException io) {
-
+                io.printStackTrace();
             }
         }
 
@@ -190,14 +187,12 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
             public void onClick(View v) {
                 int id =  mChars.get(position).charid;
                 int side = mChars.get(position).fraction;
-                Bundle bundle = new Bundle();
+
                 Intent intent = new Intent();
                 intent.putExtra("charID", id);
                 intent.putExtra("fraction", side);
                 intent.putExtra("edit", true);
-//                bundle.putInt("charID", id);
-//                bundle.putInt("fraction", side);
-//                bundle.putBoolean("edit", true);
+
                 if (side== 0) {
                     intent.setClass(v.getContext(), ActivityRepCharCreate.class);
                     v.getContext().startActivity(intent);

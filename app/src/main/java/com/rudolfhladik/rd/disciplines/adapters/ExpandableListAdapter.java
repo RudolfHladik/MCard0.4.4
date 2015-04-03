@@ -82,14 +82,14 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int groupPosition, boolean isExpanded,
                              View convertView, ViewGroup parent) {
         String laptopName = (String) getGroup(groupPosition);
-        int i = groupPosition;
+
         int data = 0;
 
 
             LayoutInflater layoutInflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             // setting different layout for rows
-            if (i>2){
+            if (groupPosition>2){
 
                 convertView = layoutInflater.inflate(R.layout.drawer_lv_menu_item,
                         null);
@@ -104,7 +104,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
 
 
-        switch (i){
+        switch (groupPosition){
             case 0: data = R.drawable.ic_jedi_lime;
 
                 break;

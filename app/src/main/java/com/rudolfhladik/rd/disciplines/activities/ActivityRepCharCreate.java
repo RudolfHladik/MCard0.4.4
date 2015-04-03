@@ -27,11 +27,11 @@ import com.rudolfhladik.rd.disciplines.R;
  */
 public class ActivityRepCharCreate extends Activity implements AdapterView.OnItemSelectedListener {
 
-// REP CHAR Creatation fragment TODO IMP Char creatation fragment
+
 
 
     private static final int PICK_FROM_GALLERY = 2;
-    Bitmap photo;
+
     Uri uri;
     Char newChar = new Char();
     boolean edit = false;
@@ -48,7 +48,7 @@ public class ActivityRepCharCreate extends Activity implements AdapterView.OnIte
     ImageView avatarIV;
     Intent imageIntent = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
     Intent editIntent;
-    Bundle bundle;
+
 
 
 
@@ -87,11 +87,11 @@ public class ActivityRepCharCreate extends Activity implements AdapterView.OnIte
 //                imageIntent.setType("image/*");
 //                imageIntent.setAction(Intent.ACTION_GET_CONTENT);
 
-               Intent intenti = new Intent(Intent.ACTION_OPEN_DOCUMENT, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//               Intent intenti = new Intent(Intent.ACTION_OPEN_DOCUMENT, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
                 startActivityForResult(
 
-                        intenti.createChooser(imageIntent, "Select photo"), 0);
+                        Intent.createChooser(imageIntent, "Select photo"), 0);
 
             }
         });
@@ -104,7 +104,7 @@ public class ActivityRepCharCreate extends Activity implements AdapterView.OnIte
 
         lvlBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
-            int level = 1;
+
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {

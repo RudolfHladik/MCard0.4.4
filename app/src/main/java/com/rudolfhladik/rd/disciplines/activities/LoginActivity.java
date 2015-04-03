@@ -25,7 +25,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Set;
+
 
 /**
  * Created by RD on 3.9.2014.
@@ -71,7 +71,7 @@ public class LoginActivity extends FragmentActivity  {
 
 
         }catch (Exception e) {
-            Log.d( "Exception: ", e.getMessage().toString());
+            Log.d( "Exception: ", e.getMessage());
 
         }
 
@@ -116,10 +116,10 @@ public class LoginActivity extends FragmentActivity  {
         protected JSONObject doInBackground(String... strings) {
 
             JSONParser jsonParser = new JSONParser();
-            JSONObject jsonObject = jsonParser.getJSONFromUrl(url);
 
 
-            return jsonObject;
+
+            return jsonParser.getJSONFromUrl(url);
         }
 
         @Override
@@ -145,6 +145,7 @@ public class LoginActivity extends FragmentActivity  {
 
 
             }catch (JSONException e){
+                e.printStackTrace();
 
             }
 
@@ -173,8 +174,8 @@ public class LoginActivity extends FragmentActivity  {
 
             } catch (IOException e) {
                 e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            } catch (InterruptedException ie) {
+                ie.printStackTrace();
             }
         }
         return false;
